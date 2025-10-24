@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://cbjr6rdo4qbnx"]
+
+[ext_resource type="Script" uid="uid://oh6qgsqvkc2b" path="res://Scenes/game-manager.gd" id="1_u0ug8"]
+[ext_resource type="Script" uid="uid://xcjq4e0lv1lg" path="res://Scenes/main-menu.gd" id="2_fdjpt"]
+[ext_resource type="Texture2D" uid="uid://n6wt4o3fis2i" path="res://Assets/image.gif" id="3_atls0"]
+[ext_resource type="Texture2D" uid="uid://bjw8r8ta1ntgv" path="res://Assets/image(1).gif" id="4_patxt"]
+
+[node name="App" type="Node"]
+script = ExtResource("1_u0ug8")
+
+[node name="MainMenu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_fdjpt")
+
+[node name="MarginContainer" type="MarginContainer" parent="MainMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MainMenu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_atls0")
+
+[node name="PlayButton" type="TextureButton" parent="MainMenu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_patxt")
+
+[node name="Game" type="Node" parent="."]
+
+[connection signal="pressed" from="MainMenu/MarginContainer/VBoxContainer/PlayButton" to="MainMenu" method="_on_play_button_pressed"]
