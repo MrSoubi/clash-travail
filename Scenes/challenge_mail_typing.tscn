@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://bb6tnijpl0m31"]
+
+[ext_resource type="Script" uid="uid://csrwyvw1ctg3g" path="res://Scripts/auto_mail.gd" id="1_6mhsj"]
+[ext_resource type="AudioStream" uid="uid://cptiwiupnmucg" path="res://Assets/Keyboard/Keyboard_01.wav" id="2_sv4si"]
+[ext_resource type="AudioStream" uid="uid://drj3bqfsa0upp" path="res://Assets/Keyboard/Keyboard_02.wav" id="3_evpas"]
+[ext_resource type="AudioStream" uid="uid://cov36ufjdsoan" path="res://Assets/Keyboard/Keyboard_FB.wav" id="4_npvoi"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_iccuy"]
+random_pitch = 1.18
+random_volume_offset_db = 1.09
+streams_count = 2
+stream_0/stream = ExtResource("2_sv4si")
+stream_1/stream = ExtResource("3_evpas")
+
+[node name="Challenge_MailTyping" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." node_paths=PackedStringArray("typing_sfx", "finished_sfx")]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -218.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Cher Monsieur,
+
+Stagiaire au sein de votre entreprise depuis 20 ans, je suis heureuse de poursuivre depuis cette date la réalisation des missions qui me sont confiées avec enthousiasme et détermination.
+
+Ainsi, je vous prie donc de bien vouloir considérer une revalorisation de mon salaire aujourd'hui fixé à 1 801,80€ afin de le porter à 1 802€.
+
+Dans l'attente d'un retour, je l'espère, favorable de votre part.
+Veuillez agréer, Monsieur, l'expression de ma haute considération."
+script = ExtResource("1_6mhsj")
+typing_sfx = NodePath("Typing_SFX")
+finished_sfx = NodePath("Finished_SFX")
+
+[node name="Typing_SFX" type="AudioStreamPlayer" parent="RichTextLabel"]
+stream = SubResource("AudioStreamRandomizer_iccuy")
+
+[node name="Finished_SFX" type="AudioStreamPlayer" parent="RichTextLabel"]
+stream = ExtResource("4_npvoi")

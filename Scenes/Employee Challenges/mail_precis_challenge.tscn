@@ -1,9 +1,35 @@
-[gd_scene format=3 uid="uid://otkh7yeeoys7"]
+[gd_scene load_steps=4 format=3 uid="uid://otkh7yeeoys7"]
 
-[node name="MailPrecis" type="Control"]
+[ext_resource type="Script" uid="uid://ixf1s0b0ya6k" path="res://Scenes/Employee Challenges/mail_precis_challenge.gd" id="1_uhqgg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_uhqgg"]
+font_size = 25
+
+[sub_resource type="LabelSettings" id="LabelSettings_r3jeu"]
+
+[node name="MailPrecis" type="Control" node_paths=PackedStringArray("txt", "txt_info")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_uhqgg")
+txt = NodePath("Label")
+txt_info = NodePath("Label2")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 202.0
+offset_top = 365.0
+offset_right = 242.0
+offset_bottom = 388.0
+label_settings = SubResource("LabelSettings_uhqgg")
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 208.0
+offset_top = 275.0
+offset_right = 248.0
+offset_bottom = 298.0
+label_settings = SubResource("LabelSettings_r3jeu")
