@@ -1,19 +1,27 @@
-[gd_scene load_steps=11 format=3 uid="uid://cbjr6rdo4qbnx"]
+[gd_scene load_steps=18 format=3 uid="uid://cbjr6rdo4qbnx"]
 
 [ext_resource type="Script" uid="uid://oh6qgsqvkc2b" path="res://Scripts/stress-manager.gd" id="1_u0ug8"]
 [ext_resource type="Script" uid="uid://xcjq4e0lv1lg" path="res://Scripts/main-menu.gd" id="2_fdjpt"]
 [ext_resource type="Texture2D" uid="uid://n6wt4o3fis2i" path="res://Assets/image.gif" id="3_atls0"]
 [ext_resource type="Script" uid="uid://1k2flfv01hke" path="res://Scripts/game.gd" id="4_atls0"]
 [ext_resource type="Texture2D" uid="uid://bjw8r8ta1ntgv" path="res://Assets/image(1).gif" id="4_patxt"]
-[ext_resource type="PackedScene" uid="uid://cvcuv61easb08" path="res://Scenes/challenge_mail_typing.tscn" id="5_fdjpt"]
-[ext_resource type="PackedScene" uid="uid://bsah8d2sb0pwh" path="res://Scenes/challenge_pop_ups.tscn" id="6_patxt"]
-[ext_resource type="Script" uid="uid://c8qnpx8vo7jd5" path="res://Scenes/ambiance_sound_manager.gd" id="8_vl6qb"]
+[ext_resource type="PackedScene" uid="uid://cvcuv61easb08" path="res://Scenes/Employee Challenges/demande_augmentation_challenge.tscn" id="5_fdjpt"]
+[ext_resource type="PackedScene" uid="uid://ch5urvmoaebc" path="res://Scenes/Boss Challenges/bourse_challenge.tscn" id="6_8djel"]
+[ext_resource type="PackedScene" uid="uid://bsah8d2sb0pwh" path="res://Scenes/Boss Challenges/challenge_pop_ups.tscn" id="6_patxt"]
+[ext_resource type="PackedScene" uid="uid://bmkbhng5blwhx" path="res://Scenes/Employee Challenges/destress_employee.tscn" id="7_76bsv"]
+[ext_resource type="PackedScene" uid="uid://b0ybp3jyhe22f" path="res://Scenes/Boss Challenges/augmentation_challenge.tscn" id="7_w1m6e"]
+[ext_resource type="PackedScene" uid="uid://b08ae601qbu0n" path="res://Scenes/Boss Challenges/destress_boss.tscn" id="8_85vr7"]
+[ext_resource type="PackedScene" uid="uid://b0oc6hcr4js4c" path="res://Scenes/Boss Challenges/mouche_challenge.tscn" id="8_guu18"]
+[ext_resource type="Script" uid="uid://c8qnpx8vo7jd5" path="res://Scripts/ambiance_sound_manager.gd" id="8_vl6qb"]
 [ext_resource type="AudioStream" uid="uid://b3gkc7jyxa8jw" path="res://Assets/AMBIANCES/AMB_EMP.wav" id="9_bypbs"]
+[ext_resource type="PackedScene" uid="uid://otkh7yeeoys7" path="res://Scenes/Employee Challenges/mail_precis_challenge.tscn" id="9_rm2oa"]
 [ext_resource type="AudioStream" uid="uid://dgnchn1xmj5jy" path="res://Assets/AMBIANCES/AMB_PATRON.wav" id="10_76bsv"]
+[ext_resource type="PackedScene" uid="uid://brndmg0cl6k82" path="res://Scenes/Employee Challenges/bebe_challenge.tscn" id="11_yedv1"]
 
 [node name="App" type="Node"]
 
 [node name="MainMenu" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -46,8 +54,10 @@ texture_normal = ExtResource("4_patxt")
 
 [node name="Game" type="Node" parent="." node_paths=PackedStringArray("employee_zone", "boss_zone")]
 script = ExtResource("4_atls0")
-challenges_boss = Array[PackedScene]([ExtResource("6_patxt")])
-challenges_employee = Array[PackedScene]([ExtResource("5_fdjpt")])
+challenges_boss = Array[PackedScene]([ExtResource("6_patxt"), ExtResource("6_8djel"), ExtResource("7_w1m6e"), ExtResource("8_guu18")])
+challenges_employee = Array[PackedScene]([ExtResource("9_rm2oa"), ExtResource("5_fdjpt"), ExtResource("11_yedv1")])
+employee_destress_game = ExtResource("7_76bsv")
+boss_destress_game = ExtResource("8_85vr7")
 employee_zone = NodePath("Control/HBoxContainer/EmployeePanel/MarginContainer/VBoxContainer/EmployeeZone")
 boss_zone = NodePath("Control/HBoxContainer/BossPanel/MarginContainer/VBoxContainer/BossZone")
 
