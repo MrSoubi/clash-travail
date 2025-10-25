@@ -12,4 +12,4 @@ func _ready() -> void:
 func on_fly_dead():
 	flies_count -= 1
 	if flies_count == 0:
-		print("FINI")
+		EventBus.on_challenge_completed.emit()
