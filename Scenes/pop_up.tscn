@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://t8hbmgqhvd2b"]
 
-[ext_resource type="Script" uid="uid://b5kxqgtsgltdc" path="res://Scenes/pop_up.gd" id="1_tv3en"]
+[ext_resource type="Script" uid="uid://b5kxqgtsgltdc" path="res://Scripts/pop_up.gd" id="1_tv3en"]
 
 [node name="PopUp" type="Panel"]
 offset_right = 123.0

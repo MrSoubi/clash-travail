@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bsah8d2sb0pwh"]
 
-[ext_resource type="Script" uid="uid://p6r2pdciyjyi" path="res://Scenes/challenge_pop_ups.gd" id="1_qu0aw"]
+[ext_resource type="Script" uid="uid://p6r2pdciyjyi" path="res://Scripts/challenge_pop_ups.gd" id="1_qu0aw"]
 
 [node name="Challenge_PopUps" type="Control" node_paths=PackedStringArray("positions")]
 layout_mode = 3

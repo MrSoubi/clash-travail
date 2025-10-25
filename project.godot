@@ -13,6 +13,10 @@ config_version=5
 run/main_scene="uid://cbjr6rdo4qbnx"
 config/features=PackedStringArray("4.5")
 
+[autoload]
+
+EventBus="*res://Scripts/event_bus.gd"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

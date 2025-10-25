@@ -9,6 +9,10 @@ var stress_boss : float = 0
 signal on_employee_burned_out
 signal on_boss_burned_out
 
+func _ready() -> void:
+	EventBus.add_stress_to_boss.connect(add_stress_boss)
+	EventBus.add_stress_to_employee.connect(add_stress_employee)
+	
 func add_stress_employee(amount : float):
 	stress_employee += amount
 	if stress_employee >= 100:
