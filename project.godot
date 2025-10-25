@@ -10,6 +10,12 @@ config_version=5
 
 [application]
 
+config/features=PackedStringArray("4.5")
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
 config/name="Clash Travail"
 run/main_scene="uid://cbjr6rdo4qbnx"
 config/features=PackedStringArray("4.5", "Forward Plus")
