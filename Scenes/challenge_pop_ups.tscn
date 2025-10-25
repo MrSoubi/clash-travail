@@ -1,0 +1,52 @@
+[gd_scene load_steps=2 format=3 uid="uid://bsah8d2sb0pwh"]
+
+[ext_resource type="Script" uid="uid://p6r2pdciyjyi" path="res://Scenes/challenge_pop_ups.gd" id="1_qu0aw"]
+
+[node name="Challenge_PopUps" type="Control" node_paths=PackedStringArray("positions")]
+layout_mode = 3
+anchors_preset = 0
+size_flags_vertical = 3
+script = ExtResource("1_qu0aw")
+positions = [NodePath("Marker2D"), NodePath("Marker2D2"), NodePath("Marker2D3"), NodePath("Marker2D4"), NodePath("Marker2D5"), NodePath("Marker2D6"), NodePath("Marker2D7"), NodePath("Marker2D8"), NodePath("Marker2D9"), NodePath("Marker2D10"), NodePath("Marker2D11"), NodePath("Marker2D12"), NodePath("Marker2D13"), NodePath("Marker2D14")]
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(118, 379)
+
+[node name="Marker2D2" type="Marker2D" parent="."]
+position = Vector2(238, 265)
+
+[node name="Marker2D3" type="Marker2D" parent="."]
+position = Vector2(94, 218)
+
+[node name="Marker2D4" type="Marker2D" parent="."]
+position = Vector2(216, 158)
+
+[node name="Marker2D5" type="Marker2D" parent="."]
+position = Vector2(197, 100)
+
+[node name="Marker2D6" type="Marker2D" parent="."]
+position = Vector2(218, 475)
+
+[node name="Marker2D7" type="Marker2D" parent="."]
+position = Vector2(299, 426)
+
+[node name="Marker2D8" type="Marker2D" parent="."]
+position = Vector2(200, 347)
+
+[node name="Marker2D9" type="Marker2D" parent="."]
+position = Vector2(101, 321)
+
+[node name="Marker2D10" type="Marker2D" parent="."]
+position = Vector2(348, 246)
+
+[node name="Marker2D11" type="Marker2D" parent="."]
+position = Vector2(331, 154)
+
+[node name="Marker2D12" type="Marker2D" parent="."]
+position = Vector2(288, 107)
+
+[node name="Marker2D13" type="Marker2D" parent="."]
+position = Vector2(59, 73)
+
+[node name="Marker2D14" type="Marker2D" parent="."]
+position = Vector2(155, 178)
