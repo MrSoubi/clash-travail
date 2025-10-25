@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cbjr6rdo4qbnx"]
+[gd_scene load_steps=11 format=3 uid="uid://cbjr6rdo4qbnx"]
 
 [ext_resource type="Script" uid="uid://oh6qgsqvkc2b" path="res://Scripts/stress-manager.gd" id="1_u0ug8"]
 [ext_resource type="Script" uid="uid://xcjq4e0lv1lg" path="res://Scripts/main-menu.gd" id="2_fdjpt"]
@@ -7,11 +7,13 @@
 [ext_resource type="Texture2D" uid="uid://bjw8r8ta1ntgv" path="res://Assets/image(1).gif" id="4_patxt"]
 [ext_resource type="PackedScene" uid="uid://cvcuv61easb08" path="res://Scenes/challenge_mail_typing.tscn" id="5_fdjpt"]
 [ext_resource type="PackedScene" uid="uid://bsah8d2sb0pwh" path="res://Scenes/challenge_pop_ups.tscn" id="6_patxt"]
+[ext_resource type="Script" uid="uid://c8qnpx8vo7jd5" path="res://Scenes/ambiance_sound_manager.gd" id="8_vl6qb"]
+[ext_resource type="AudioStream" uid="uid://b3gkc7jyxa8jw" path="res://Assets/AMBIANCES/AMB_EMP.wav" id="9_bypbs"]
+[ext_resource type="AudioStream" uid="uid://dgnchn1xmj5jy" path="res://Assets/AMBIANCES/AMB_PATRON.wav" id="10_76bsv"]
 
 [node name="App" type="Node"]
 
 [node name="MainMenu" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -124,5 +126,16 @@ size_flags_vertical = 8
 script = ExtResource("1_u0ug8")
 stress_bar_employee = NodePath("../Control/HBoxContainer/EmployeePanel/MarginContainer/VBoxContainer/ProgressBar")
 stress_bar_boss = NodePath("../Control/HBoxContainer/BossPanel/MarginContainer/VBoxContainer/ProgressBar")
+
+[node name="AmbianceSound" type="Node" parent="." node_paths=PackedStringArray("ambiance_employee", "ambiance_boss")]
+script = ExtResource("8_vl6qb")
+ambiance_employee = NodePath("AmbianceEmployee")
+ambiance_boss = NodePath("AmbianceBoss")
+
+[node name="AmbianceEmployee" type="AudioStreamPlayer" parent="AmbianceSound"]
+stream = ExtResource("9_bypbs")
+
+[node name="AmbianceBoss" type="AudioStreamPlayer" parent="AmbianceSound"]
+stream = ExtResource("10_76bsv")
 
 [connection signal="pressed" from="MainMenu/MarginContainer/VBoxContainer/PlayButton" to="MainMenu" method="_on_play_button_pressed"]
