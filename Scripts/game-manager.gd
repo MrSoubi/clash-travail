@@ -1,0 +1,24 @@
+extends Node
+
+@export var stress_bar_employee : ProgressBar
+@export var stress_bar_boss : ProgressBar
+
+var stress_employee : float = 0
+var stress_boss : float = 0
+
+signal on_employee_burned_out
+signal on_boss_burned_out
+
+func add_stress_employee(amount : float):
+	stress_employee += amount
+	if stress_employee >= 100:
+		stress_employee = 100
+		on_employee_burned_out.emit()
+	stress_bar_employee.value = stress_employee
+
+func add_stress_boss(amount : float):
+	stress_boss += amount
+	if stress_boss >= 100:
+		stress_boss = 100
+		on_boss_burned_out.emit()
+	stress_bar_boss.value = stress_boss

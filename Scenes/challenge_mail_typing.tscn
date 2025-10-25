@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://cvcuv61easb08"]
+
+[ext_resource type="Script" uid="uid://csrwyvw1ctg3g" path="res://Scripts/auto_mail.gd" id="1_6mhsj"]
+
+[node name="Challenge_MailTyping" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+size_flags_vertical = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." node_paths=PackedStringArray("typing_sfx", "finished_sfx")]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -218.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+script = ExtResource("1_6mhsj")
+typing_sfx = NodePath("Typing_SFX")
+finished_sfx = NodePath("Finished_SFX")
+
+[node name="Typing_SFX" type="AudioStreamPlayer" parent="RichTextLabel"]
+
+[node name="Finished_SFX" type="AudioStreamPlayer" parent="RichTextLabel"]
