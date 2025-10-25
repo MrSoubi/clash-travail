@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://b0ybp3jyhe22f" path="res://Scenes/Boss Challenges/augmentation_challenge.tscn" id="7_w1m6e"]
 [ext_resource type="PackedScene" uid="uid://b08ae601qbu0n" path="res://Scenes/Boss Challenges/destress_boss.tscn" id="8_85vr7"]
 [ext_resource type="PackedScene" uid="uid://b0oc6hcr4js4c" path="res://Scenes/Boss Challenges/mouche_challenge.tscn" id="8_guu18"]
-[ext_resource type="Script" path="res://Scripts/ambiance_sound_manager.gd" id="8_vl6qb"]
+[ext_resource type="Script" uid="uid://c8qnpx8vo7jd5" path="res://Scripts/ambiance_sound_manager.gd" id="8_vl6qb"]
 [ext_resource type="AudioStream" uid="uid://b3gkc7jyxa8jw" path="res://Assets/AMBIANCES/AMB_EMP.wav" id="9_bypbs"]
 [ext_resource type="PackedScene" uid="uid://otkh7yeeoys7" path="res://Scenes/Employee Challenges/mail_precis_challenge.tscn" id="9_rm2oa"]
 [ext_resource type="AudioStream" uid="uid://dgnchn1xmj5jy" path="res://Assets/AMBIANCES/AMB_PATRON.wav" id="10_76bsv"]
@@ -55,7 +55,7 @@ texture_normal = ExtResource("4_patxt")
 [node name="Game" type="Node" parent="." node_paths=PackedStringArray("employee_zone", "boss_zone")]
 script = ExtResource("4_atls0")
 challenges_boss = Array[PackedScene]([ExtResource("6_patxt"), ExtResource("6_8djel"), ExtResource("7_w1m6e"), ExtResource("8_guu18")])
-challenges_employee = Array[PackedScene]([ExtResource("9_rm2oa"), ExtResource("5_fdjpt"), ExtResource("11_yedv1")])
+challenges_employee = Array[PackedScene]([ExtResource("5_fdjpt"), ExtResource("9_rm2oa"), ExtResource("11_yedv1")])
 employee_destress_game = ExtResource("7_76bsv")
 boss_destress_game = ExtResource("8_85vr7")
 employee_zone = NodePath("Control/HBoxContainer/EmployeePanel/MarginContainer/VBoxContainer/EmployeeZone")

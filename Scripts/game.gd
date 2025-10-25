@@ -17,7 +17,7 @@ var boss_challenge_index : int
 var employee_challenge_index : int
 
 func _ready() -> void:
-	is_boss_working = true
+	is_boss_working = false
 	next_challenge()
 	EventBus.on_challenge_completed.connect(next_challenge)
 
@@ -28,6 +28,14 @@ func _process(delta: float) -> void:
 		EventBus.add_stress_to_employee.emit(stress_rate * delta)
 	
 func next_challenge():
+	is_boss_working = !is_boss_working
+	
+	if current_challenge_employee != null:
+		current_challenge_employee.queue_free()
+	
+	if current_challenge_boss != null:
+		current_challenge_boss.queue_free()
+		
 	if is_boss_working:
 		load_boss_challenge(boss_challenge_index)
 		boss_challenge_index += 1
@@ -38,15 +46,15 @@ func next_challenge():
 		employee_challenge_index = employee_challenge_index % challenges_employee.size()
 		
 func load_employee_challenge(index : int):
-	if current_challenge_employee != null:
-		current_challenge_employee.queue_free()
-	
 	current_challenge_employee = challenges_employee[index].instantiate()
 	employee_zone.add_child(current_challenge_employee)
+	
+	current_challenge_boss = boss_destress_game.instantiate()
+	boss_zone.add_child(current_challenge_boss)
 
 func load_boss_challenge(index : int):
-	if current_challenge_boss != null:
-		current_challenge_boss.queue_free()
-		
 	current_challenge_boss = challenges_boss[index].instantiate()
 	boss_zone.add_child(current_challenge_boss)
+	
+	current_challenge_employee = employee_destress_game.instantiate()
+	employee_zone.add_child(current_challenge_employee)

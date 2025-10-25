@@ -13,4 +13,4 @@ func _input(event: InputEvent) -> void:
 	
 	if visible_ratio == 1:
 		finished_sfx.play()
-		EventBus.on_challenge_completed.emit(false)
+		EventBus.on_challenge_completed.emit()

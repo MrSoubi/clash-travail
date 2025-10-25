@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bmkbhng5blwhx"]
 
 [ext_resource type="Script" uid="uid://bjou20p873yob" path="res://Scripts/tiktok_scroller.gd" id="1_gg4gm"]
-[ext_resource type="Texture2D" uid="uid://i6af4cg1k0u8" path="res://icon.svg" id="1_o45s2"]
+[ext_resource type="Texture2D" uid="uid://d3aqbtm6qdmo3" path="res://Assets/2025_10_25_0qw_Kleki.png" id="2_gg4gm"]
 
 [node name="DestressEmployee" type="Control"]
 texture_repeat = 2
@@ -32,29 +32,29 @@ alignment = 1
 [node name="TextureRect" type="TextureRect" parent="ScrollBox/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-texture = ExtResource("1_o45s2")
+texture = ExtResource("2_gg4gm")
 expand_mode = 5
 
 [node name="TextureRect2" type="TextureRect" parent="ScrollBox/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-texture = ExtResource("1_o45s2")
+texture = ExtResource("2_gg4gm")
 expand_mode = 5
 
 [node name="TextureRect3" type="TextureRect" parent="ScrollBox/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-texture = ExtResource("1_o45s2")
+texture = ExtResource("2_gg4gm")
 expand_mode = 5
 
 [node name="TextureRect4" type="TextureRect" parent="ScrollBox/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-texture = ExtResource("1_o45s2")
+texture = ExtResource("2_gg4gm")
 expand_mode = 5
 
 [node name="TextureRect5" type="TextureRect" parent="ScrollBox/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-texture = ExtResource("1_o45s2")
+texture = ExtResource("2_gg4gm")
 expand_mode = 5
