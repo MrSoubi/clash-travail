@@ -47,5 +47,3 @@ func next():
 	else:
 		is_positive = false
 		info.label_settings = settings_negative
-		buy_button.pressed.connect(loose)
-		sell_button.pressed.connect(win)
