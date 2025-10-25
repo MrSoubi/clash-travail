@@ -27,7 +27,7 @@ _data = {
 }
 point_count = 18
 
-[node name="MoucheChallenge" type="Control" node_paths=PackedStringArray("flies")]
+[node name="MoucheChallenge" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -36,7 +36,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_yvo7r")
-flies = [NodePath("Path2D/PathFollow2D/Fly"), NodePath("Path2D2/PathFollow2D/Fly"), NodePath("Path2D3/PathFollow2D/Fly"), NodePath("Path2D4/PathFollow2D/Fly")]
 
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource("Curve2D_ahjye")
@@ -73,3 +72,5 @@ position = Vector2(457, 724)
 rotates = false
 
 [node name="Fly" parent="Path2D4/PathFollow2D" instance=ExtResource("1_61r2u")]
+
+[node name="Timer" type="Timer" parent="."]
