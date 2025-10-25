@@ -1,6 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://cvcuv61easb08"]
+[gd_scene load_steps=6 format=3 uid="uid://cvcuv61easb08"]
 
 [ext_resource type="Script" uid="uid://csrwyvw1ctg3g" path="res://Scripts/auto_mail.gd" id="1_6mhsj"]
+[ext_resource type="AudioStream" uid="uid://cptiwiupnmucg" path="res://Assets/Keyboard/Keyboard_01.wav" id="2_sv4si"]
+[ext_resource type="AudioStream" uid="uid://drj3bqfsa0upp" path="res://Assets/Keyboard/Keyboard_02.wav" id="3_evpas"]
+[ext_resource type="AudioStream" uid="uid://cov36ufjdsoan" path="res://Assets/Keyboard/Keyboard_FB.wav" id="4_npvoi"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_iccuy"]
+random_pitch = 1.18
+random_volume_offset_db = 1.09
+streams_count = 2
+stream_0/stream = ExtResource("2_sv4si")
+stream_1/stream = ExtResource("3_evpas")
 
 [node name="Challenge_MailTyping" type="Control"]
 layout_mode = 3
@@ -25,5 +35,7 @@ typing_sfx = NodePath("Typing_SFX")
 finished_sfx = NodePath("Finished_SFX")
 
 [node name="Typing_SFX" type="AudioStreamPlayer" parent="RichTextLabel"]
+stream = SubResource("AudioStreamRandomizer_iccuy")
 
 [node name="Finished_SFX" type="AudioStreamPlayer" parent="RichTextLabel"]
+stream = ExtResource("4_npvoi")
