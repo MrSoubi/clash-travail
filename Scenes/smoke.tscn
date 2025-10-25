@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://dul3asqevt7xh"]
+
+[ext_resource type="Texture2D" uid="uid://bkfnkmvb0r67t" path="res://Assets/smoke.png" id="1_2by3q"]
+
+[sub_resource type="Gradient" id="Gradient_7y88m"]
+offsets = PackedFloat32Array(0, 0.4050633, 1)
+colors = PackedColorArray(1.9639353, 1.518962, 0.8959993, 1, 0.55058205, 0.48909882, 0.3829005, 1, 0.4509804, 0.4509804, 0.4509804, 0.72156864)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_2by3q"]
+gradient = SubResource("Gradient_7y88m")
+
+[sub_resource type="Curve" id="Curve_nvqdy"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.21527267), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_jxinv"]
+curve = SubResource("Curve_nvqdy")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_7y88m"]
+particle_flag_disable_z = true
+gravity = Vector3(0, -1000, 0)
+scale_min = 0.07
+scale_max = 0.089999996
+scale_curve = SubResource("CurveTexture_jxinv")
+color_ramp = SubResource("GradientTexture1D_2by3q")
+turbulence_enabled = true
+turbulence_noise_strength = 2.7
+turbulence_noise_scale = 6.38
+turbulence_noise_speed = Vector3(4.12, 11.17, 6.205)
+turbulence_noise_speed_random = 1.7
+turbulence_influence_min = 0.0
+turbulence_influence_max = 0.113000005
+turbulence_initial_displacement_min = -48.399998
+turbulence_initial_displacement_max = 20.000002
+
+[node name="Smoke" type="GPUParticles2D"]
+position = Vector2(228, 125)
+amount = 40
+texture = ExtResource("1_2by3q")
+process_material = SubResource("ParticleProcessMaterial_7y88m")
