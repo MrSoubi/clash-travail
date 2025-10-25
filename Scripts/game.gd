@@ -7,6 +7,8 @@ extends Node
 @export var employee_zone : Control
 @export var boss_zone : Control
 
+@export var stress_rate : float = 1
+
 var current_challenge_boss : Node
 var current_challenge_employee : Node
 
@@ -19,6 +21,12 @@ func _ready() -> void:
 	next_challenge()
 	EventBus.on_challenge_completed.connect(next_challenge)
 
+func _process(delta: float) -> void:
+	if is_boss_working:
+		EventBus.add_stress_to_boss.emit(stress_rate * delta)
+	else:
+		EventBus.add_stress_to_employee.emit(stress_rate * delta)
+	
 func next_challenge():
 	if is_boss_working:
 		load_boss_challenge(boss_challenge_index)
