@@ -61,7 +61,7 @@ func _input(event):
 				upSprite.scale = baseSize
 				upSprite.modulate.a = 0.5
 			if sequence_index == sequence.size():
-				print("FINI")
+				EventBus.on_challenge_completed.emit()
 				sequence_index = 0
 		#else:
 			#sequence_index = 0
