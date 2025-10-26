@@ -10,7 +10,10 @@ extends Control
 
 # Utiliser le bool is_boss_challenge pour changer la position des instructions
 func _ready() -> void:
-	animator.play("Appear")
+	if is_boss_challenge:
+		animator.play("BossAppear")
+	else:
+		animator.play("EmployeeAppear")
 
 func _on_timeout() -> void:
 	animator.play("FadeOut")

@@ -18,7 +18,15 @@ curve = SubResource("Curve_nvqdy")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_7y88m"]
 particle_flag_disable_z = true
-gravity = Vector3(0, -1000, 0)
+angular_velocity_min = -1.6093254e-05
+angular_velocity_max = 107.05998
+orbit_velocity_min = 9.49949e-08
+orbit_velocity_max = 0.0890001
+radial_velocity_min = -2.2351742e-05
+radial_velocity_max = 126.38998
+gravity = Vector3(0, -500, 0)
+radial_accel_min = -2.2351742e-06
+radial_accel_max = -2.2351742e-06
 scale_min = 0.07
 scale_max = 0.089999996
 scale_curve = SubResource("CurveTexture_jxinv")
@@ -35,6 +43,7 @@ turbulence_initial_displacement_max = 20.000002
 
 [node name="Smoke" type="GPUParticles2D"]
 position = Vector2(228, 125)
-amount = 40
+amount = 20
 texture = ExtResource("1_2by3q")
+lifetime = 1.5
 process_material = SubResource("ParticleProcessMaterial_7y88m")
