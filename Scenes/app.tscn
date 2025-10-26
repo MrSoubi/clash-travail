@@ -22,11 +22,11 @@
 [ext_resource type="PackedScene" uid="uid://g8t50tw4yql" path="res://Scenes/instructions/instructions_mouche.tscn" id="16_rdw6j"]
 [ext_resource type="Texture2D" uid="uid://l1pdtk3g86li" path="res://Assets/bg-plage-V1.png" id="16_yedv1"]
 [ext_resource type="PackedScene" uid="uid://bdeypmq6mrn1x" path="res://Scenes/instructions/instructions_augmentation.tscn" id="17_p23bk"]
-[ext_resource type="Texture2D" uid="uid://bo0ptoyojt8v6" path="res://Assets/bg-bureau-V1.png" id="17_yedv1"]
 [ext_resource type="PackedScene" uid="uid://ciidlf8bbmvqd" path="res://Scenes/instructions/instructions_mail.tscn" id="18_ui4da"]
 [ext_resource type="PackedScene" uid="uid://b7lg0fb2xkghc" path="res://Scenes/instructions/instructions_bebe.tscn" id="19_i40ft"]
 [ext_resource type="FontFile" uid="uid://c4oet4vxfxga0" path="res://Assets/GrapeSoda.ttf" id="21_fx41s"]
 [ext_resource type="StyleBox" uid="uid://dxmbl4nca4won" path="res://Assets/stress_bar_employee_style.tres" id="22_p23bk"]
+[ext_resource type="Texture2D" uid="uid://dq4j336omqipi" path="res://Assets/bg-bureau-no-mouse.png" id="23_i40ft"]
 [ext_resource type="StyleBox" uid="uid://bvet4hr5auym7" path="res://Assets/stress_bar_boss_style.tres" id="23_rdw6j"]
 [ext_resource type="Texture2D" uid="uid://bpfcvj7pqjc4g" path="res://Assets/winboss.gif" id="29_i40ft"]
 [ext_resource type="Texture2D" uid="uid://cr7wpahcyej1w" path="res://Assets/winemployee.gif" id="30_tb7mq"]
@@ -110,7 +110,6 @@ scale = Vector2(0.5349004, 0.5349004)
 texture_normal = ExtResource("4_patxt")
 
 [node name="Game" type="Control" parent="." node_paths=PackedStringArray("employee_zone", "boss_zone")]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -234,7 +233,7 @@ offset_left = -21.5
 offset_right = 21.5
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("17_yedv1")
+texture = ExtResource("23_i40ft")
 expand_mode = 2
 stretch_mode = 4
 
