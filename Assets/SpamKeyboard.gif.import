@@ -1,0 +1,14 @@
+[remap]
+
+importer="import_gif_to_animated_texture"
+type="AnimatedTexture"
+uid="uid://di1m40xc8kx7c"
+path="res://.godot/imported/SpamKeyboard.gif-d7a1b10c8ce38568950df013d9ada2d0.tres"
+
+[deps]
+
+source_file="res://Assets/SpamKeyboard.gif"
+dest_files=["res://.godot/imported/SpamKeyboard.gif-d7a1b10c8ce38568950df013d9ada2d0.tres"]
+
+[params]
+

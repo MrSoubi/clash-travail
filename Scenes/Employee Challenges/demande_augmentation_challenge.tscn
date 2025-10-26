@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cvcuv61easb08"]
+[gd_scene load_steps=7 format=3 uid="uid://cvcuv61easb08"]
 
 [ext_resource type="Script" uid="uid://csrwyvw1ctg3g" path="res://Scripts/auto_mail.gd" id="1_6mhsj"]
 [ext_resource type="AudioStream" uid="uid://cptiwiupnmucg" path="res://Assets/Keyboard/Keyboard_01.wav" id="2_sv4si"]
 [ext_resource type="AudioStream" uid="uid://drj3bqfsa0upp" path="res://Assets/Keyboard/Keyboard_02.wav" id="3_evpas"]
 [ext_resource type="AudioStream" uid="uid://cov36ufjdsoan" path="res://Assets/Keyboard/Keyboard_FB.wav" id="4_npvoi"]
+[ext_resource type="Texture2D" uid="uid://di1m40xc8kx7c" path="res://Assets/SpamKeyboard.gif" id="5_i4h8h"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_iccuy"]
 random_pitch = 1.18
@@ -29,7 +30,14 @@ anchor_bottom = 1.0
 offset_top = -218.0
 grow_horizontal = 2
 grow_vertical = 0
-text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+text = "Cher Monsieur,
+
+Stagiaire au sein de votre entreprise depuis 20 ans, je suis heureuse de poursuivre depuis cette date la réalisation des missions qui me sont confiées avec enthousiasme et détermination.
+
+Ainsi, je vous prie donc de bien vouloir considérer une revalorisation de mon salaire aujourd'hui fixé à 1 801,80€ afin de le porter à 1 802€.
+
+Dans l'attente d'un retour, je l'espère, favorable de votre part.
+Veuillez agréer, Madame, Monsieur, l'expression de ma haute considération."
 script = ExtResource("1_6mhsj")
 typing_sfx = NodePath("Typing_SFX")
 finished_sfx = NodePath("Finished_SFX")
@@ -39,3 +47,16 @@ stream = SubResource("AudioStreamRandomizer_iccuy")
 
 [node name="Finished_SFX" type="AudioStreamPlayer" parent="RichTextLabel"]
 stream = ExtResource("4_npvoi")
+
+[node name="Sprite2D" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.166
+anchor_top = 0.3
+anchor_right = 0.215
+anchor_bottom = 0.3
+offset_top = -64.0
+offset_right = 128.0
+offset_bottom = 64.0
+grow_vertical = 2
+texture = ExtResource("5_i4h8h")
