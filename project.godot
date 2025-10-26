@@ -17,6 +17,10 @@ config/features=PackedStringArray("4.5")
 
 EventBus="*res://Scripts/event_bus.gd"
 
+[display]
+
+window/stretch/mode="viewport"
+
 [input]
 
 key_mail={

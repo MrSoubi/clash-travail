@@ -2,6 +2,8 @@ extends Node
 
 @export var stress_bar_employee : ProgressBar
 @export var stress_bar_boss : ProgressBar
+@export var stress_bar_boss_style : StyleBoxFlat
+@export var stress_bar_employee_style : StyleBoxFlat
 
 var stress_employee : float = 0
 var stress_boss : float = 0
@@ -28,6 +30,11 @@ func add_stress_employee(amount : float):
 	if not is_stress_running:
 		return
 	
+	if amount > 0:
+		stress_bar_employee_style.bg_color = Color.RED
+	else:
+		stress_bar_employee_style.bg_color = Color.GREEN
+	
 	stress_employee += amount
 	if stress_employee >= 100:
 		stress_employee = 100
@@ -39,6 +46,12 @@ func add_stress_boss(amount : float):
 		return
 	
 	stress_boss += amount
+	
+	if amount > 0:
+		stress_bar_boss_style.bg_color = Color.RED
+	else:
+		stress_bar_boss_style.bg_color = Color.GREEN
+	
 	if stress_boss >= 100:
 		stress_boss = 100
 		EventBus.on_boss_burned_out.emit()

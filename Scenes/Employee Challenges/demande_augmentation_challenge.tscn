@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://cvcuv61easb08"]
+[gd_scene load_steps=8 format=3 uid="uid://cvcuv61easb08"]
 
 [ext_resource type="Script" uid="uid://csrwyvw1ctg3g" path="res://Scripts/auto_mail.gd" id="1_6mhsj"]
+[ext_resource type="FontFile" uid="uid://c4oet4vxfxga0" path="res://Assets/GrapeSoda.ttf" id="1_uo02p"]
 [ext_resource type="AudioStream" uid="uid://cptiwiupnmucg" path="res://Assets/Keyboard/Keyboard_01.wav" id="2_sv4si"]
 [ext_resource type="AudioStream" uid="uid://drj3bqfsa0upp" path="res://Assets/Keyboard/Keyboard_02.wav" id="3_evpas"]
 [ext_resource type="AudioStream" uid="uid://cov36ufjdsoan" path="res://Assets/Keyboard/Keyboard_FB.wav" id="4_npvoi"]
@@ -30,6 +31,8 @@ anchor_bottom = 1.0
 offset_top = -218.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_fonts/normal_font = ExtResource("1_uo02p")
+theme_override_font_sizes/normal_font_size = 25
 text = "Cher Monsieur,
 
 Stagiaire au sein de votre entreprise depuis 20 ans, je suis heureuse de poursuivre depuis cette date la réalisation des missions qui me sont confiées avec enthousiasme et détermination.
@@ -38,6 +41,9 @@ Ainsi, je vous prie donc de bien vouloir considérer une revalorisation de mon s
 
 Dans l'attente d'un retour, je l'espère, favorable de votre part.
 Veuillez agréer, Madame, Monsieur, l'expression de ma haute considération."
+scroll_active = false
+scroll_following = true
+scroll_following_visible_characters = true
 script = ExtResource("1_6mhsj")
 typing_sfx = NodePath("Typing_SFX")
 finished_sfx = NodePath("Finished_SFX")
@@ -47,6 +53,15 @@ stream = SubResource("AudioStreamRandomizer_iccuy")
 
 [node name="Finished_SFX" type="AudioStreamPlayer" parent="RichTextLabel"]
 stream = ExtResource("4_npvoi")
+
+[node name="Panel" type="Panel" parent="RichTextLabel"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Sprite2D" type="TextureRect" parent="."]
 layout_mode = 1
