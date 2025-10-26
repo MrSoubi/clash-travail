@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://6118f0a4iqux"
+path="res://.godot/imported/Pop Up Close-01.wav-56c7b500381c9dc7acef65cb9fc60a79.sample"
+
+[deps]
+
+source_file="res://Assets/Pop Up/Pop Up Close-01.wav"
+dest_files=["res://.godot/imported/Pop Up Close-01.wav-56c7b500381c9dc7acef65cb9fc60a79.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
