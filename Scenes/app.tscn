@@ -93,7 +93,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("4_atls0")
-challenges_boss = Array[PackedScene]([ExtResource("6_patxt"), ExtResource("7_w1m6e"), ExtResource("6_8djel"), ExtResource("8_guu18")])
+challenges_boss = Array[PackedScene]([ExtResource("6_8djel"), ExtResource("7_w1m6e"), ExtResource("6_patxt"), ExtResource("8_guu18")])
 challenges_employee = Array[PackedScene]([ExtResource("5_fdjpt"), ExtResource("9_rm2oa"), ExtResource("11_yedv1")])
 employee_destress_game = ExtResource("7_76bsv")
 boss_destress_game = ExtResource("8_85vr7")
@@ -209,6 +209,9 @@ grow_vertical = 2
 texture = ExtResource("17_yedv1")
 expand_mode = 2
 stretch_mode = 4
+
+[node name="BourseChallenge" parent="Game/Control/HBoxContainer/BossPanel/MarginContainer/VBoxContainer/BossZone" instance=ExtResource("6_8djel")]
+layout_mode = 1
 
 [node name="ProgressBar" type="ProgressBar" parent="Game/Control/HBoxContainer/BossPanel/MarginContainer/VBoxContainer"]
 layout_mode = 2

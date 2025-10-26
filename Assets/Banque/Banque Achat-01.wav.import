@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bwlv8xh3j6qr2"
+path="res://.godot/imported/Banque Achat-01.wav-02ab4e3a32ae1e79a854fb0aa13bdd57.sample"
+
+[deps]
+
+source_file="res://Assets/Banque/Banque Achat-01.wav"
+dest_files=["res://.godot/imported/Banque Achat-01.wav-02ab4e3a32ae1e79a854fb0aa13bdd57.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

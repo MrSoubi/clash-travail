@@ -1,41 +1,23 @@
 extends Control
 
 @export var buy_button : Button
-@export var sell_button : Button
 
 @export var info : Label
 
 @export var settings_positive : LabelSettings
 @export var settings_negative : LabelSettings
-@export var correct_response_objective : int
 
-var is_positive : bool
-var correct_response : int = 0
+@export var sfx_good : AudioStreamPlayer
 
 func _ready() -> void:
 	buy_button.pressed.connect(buy)
-	sell_button.pressed.connect(sell)
 	next()
 
 func buy():
-	if is_positive:
-		win()
-	else:
-		loose()
-
-func sell():
-	if is_positive:
-		loose()
-	else:
-		win()
-
-func win():
-	correct_response += 1
-	if correct_response == correct_response_objective :
-		EventBus.on_challenge_completed.emit()
-	next()
-
-func loose():
+	sfx_good.play()
+	buy_button.visible = false
+	await get_tree().create_timer(0.5).timeout
+	buy_button.visible = true
 	next()
 
 func next():
@@ -43,7 +25,5 @@ func next():
 	info.text = str(snappedf(value, 0.5)) + "%"
 	if value > 0:
 		info.label_settings = settings_positive
-		is_positive = true
 	else:
-		is_positive = false
 		info.label_settings = settings_negative
