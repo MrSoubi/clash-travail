@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://b0ybp3jyhe22f"]
+[gd_scene load_steps=12 format=3 uid="uid://b0ybp3jyhe22f"]
 
 [ext_resource type="Script" uid="uid://b5nfde4we7prk" path="res://Scenes/Boss Challenges/augmentation_challenge.gd" id="1_6b1dl"]
+[ext_resource type="FontFile" uid="uid://c4oet4vxfxga0" path="res://Assets/GrapeSoda.ttf" id="2_6gkbb"]
 [ext_resource type="Script" uid="uid://du20nhsbamdx8" path="res://Scenes/Boss Challenges/augmentation_slider.gd" id="2_hi8u6"]
 [ext_resource type="LabelSettings" uid="uid://c6868iptqdyu0" path="res://Scenes/Boss Challenges/augmentation_label_settings.tres" id="3_hi8u6"]
 [ext_resource type="AudioStream" uid="uid://bothl4etyjrmp" path="res://Assets/Slider/Sliding loop.wav" id="4_dwivu"]
@@ -11,7 +12,9 @@
 [ext_resource type="Script" uid="uid://bxx0651ykv83q" path="res://Scenes/Boss Challenges/main_souris_patron.gd" id="9_osasj"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_6b1dl"]
-font_size = 26
+font = ExtResource("2_6gkbb")
+font_size = 33
+font_color = Color(0, 0, 0, 1)
 
 [node name="AugmentationChallenge" type="Control" node_paths=PackedStringArray("sliders", "dragAudioLoop", "valueOKAudio", "valueWrongAudio", "gameFinishedAudio")]
 layout_mode = 3

@@ -8,3 +8,4 @@ signal on_boss_burned_out
 signal reset_stress
 signal run_stress
 signal pause_stress
+signal boss_working(bool)
