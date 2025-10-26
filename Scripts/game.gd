@@ -19,7 +19,6 @@ var employee_challenge_index : int
 
 func _ready() -> void:
 	is_boss_working = false
-	next_challenge()
 	EventBus.on_challenge_completed.connect(next_challenge)
 
 func _process(delta: float) -> void:

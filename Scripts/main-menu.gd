@@ -11,3 +11,4 @@ func _on_play_button_pressed() -> void:
 	game.set_process(true)
 	self.visible = false
 	self.set_process(false)
+	game.next_challenge()
