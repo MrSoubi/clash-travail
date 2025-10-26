@@ -1,11 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://otkh7yeeoys7"]
+[gd_scene load_steps=5 format=3 uid="uid://otkh7yeeoys7"]
 
 [ext_resource type="Script" uid="uid://ixf1s0b0ya6k" path="res://Scenes/Employee Challenges/mail_precis_challenge.gd" id="1_uhqgg"]
+[ext_resource type="FontFile" uid="uid://c4oet4vxfxga0" path="res://Assets/GrapeSoda.ttf" id="2_r3jeu"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_uhqgg"]
-font_size = 25
+font = ExtResource("2_r3jeu")
+font_size = 30
+font_color = Color(1, 0.45999998, 0.45999998, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_r3jeu"]
+font_size = 30
 
 [node name="MailPrecis" type="Control" node_paths=PackedStringArray("txt", "txt_info")]
 layout_mode = 3
@@ -17,6 +21,7 @@ grow_vertical = 2
 script = ExtResource("1_uhqgg")
 txt = NodePath("Label")
 txt_info = NodePath("Label2")
+maxNumberofSequence = 3
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0

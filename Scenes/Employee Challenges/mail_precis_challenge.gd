@@ -1,93 +1,123 @@
 extends Control
 
 var sequence1 = [
-	'W',
-	'O',
+	'P',
 	'R',
-	'K',
-]
-
-var sequence2 = [
-	'M',
-	'O',
-	'N',
 	'E',
-	'Y',
-]
-
-var sequence3 = [
-	'O',
-	'F',
-	'F',
+	'S',
 	'I',
-	'C',
+	'D',
 	'E',
-]
-
-var sequence4 = [
-	'B',
-	'U',
-	'R',
 	'N',
-	'O',
-	'U',
 	'T',
 ]
 
+var sequence2 = [
+	'G',
+	'A',
+	'M',
+	'E',
+	'D',
+	'E',
+	'V',
+]
+
+var sequence3 = [
+	'F',
+	'E',
+	'R',
+	'M',
+	'I',
+	'E',
+	'R',
+]
+
+var sequence4 = [
+	'P',
+	'H',
+	'I',
+	'L',
+	'O',
+	'S',
+	'O',
+	'P',
+	'H',
+	'E',
+]
+
 var sequence5 = [
-	'B',
+	'C',
+	'H',
+	'O',
+	'M',
+	'E',
 	'U',
 	'S',
-	'I',
-	'N',
 	'E',
-	'S',
-	'S',
 ]
 
 var sequence6 = [
-	'S',
-	'A',
-	'R',
-	'K',
-	'O',
+	'P',
+	'I',
 	'Z',
-	'Y',
+	'Z',
+	'A',
+	'I',
+	'O',
+	'L',
+	'O',
 ]
 
 var sequence7 = [
-	'B',
+	'M',
+	'E',
+	'D',
+	'E',
+	'C',
 	'I',
-	'L',
-	'L',
-	'S',
+	'N',
 ]
 
 var sequence8 = [
 	'C',
 	'O',
-	'N',
-	'S',
-	'U',
-	'M',
+	'B',
+	'A',
+	'Y',
 	'E',
 ]
 
-var allSequences = [sequence1, sequence2, sequence3, sequence4, sequence5, sequence6, sequence7, sequence8, ]
+var sequence9 = [
+	'G',
+	'A',
+	'N',
+	'G',
+	'S',
+	'T',
+	'E',
+	'R',
+]
+
+var allSequences = [sequence1, sequence2, sequence3, sequence4, sequence5, sequence6, sequence7, sequence8, sequence9, ]
 
 var sequence_index = 0
 
 var sequence
 
 func _ready() -> void:
+	numberOfSequence = 0
+	changeSequence()
+
+func changeSequence() -> void:
 	sequence = allSequences[RandomNumberGenerator.new().randi_range(0, allSequences.size()-1)]
 	txt_info.text = ""
 	for c in sequence:
 		txt_info.text += c
-	
 
 @export var txt : Label
 @export var txt_info : Label
+var numberOfSequence : int
+@export var maxNumberofSequence : int
 
 func _input(event):
 	if event is InputEventKey and event.pressed:
@@ -95,5 +125,9 @@ func _input(event):
 			txt.text += event.as_text()
 			sequence_index += 1
 			if sequence_index == sequence.size():
-				EventBus.on_challenge_completed.emit()
+				numberOfSequence+=1
+				if numberOfSequence == maxNumberofSequence:
+					EventBus.on_challenge_completed.emit()
+				txt.text = ""
 				sequence_index = 0
+				changeSequence()
