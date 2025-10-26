@@ -45,7 +45,7 @@ func add_stress_boss(amount : float):
 	if not is_stress_running:
 		return
 	
-	stress_boss += amount
+	stress_boss += amount * 0.9
 	
 	if amount > 0:
 		stress_bar_boss_style.bg_color = Color.RED

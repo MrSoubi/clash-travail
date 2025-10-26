@@ -1,7 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://cqoptheygec35"]
+[gd_scene load_steps=17 format=3 uid="uid://cqoptheygec35"]
 
 [ext_resource type="Script" uid="uid://c4gyomfq4vy0x" path="res://Scenes/instructions.gd" id="1_8p7yn"]
 [ext_resource type="FontFile" uid="uid://c4oet4vxfxga0" path="res://Assets/GrapeSoda.ttf" id="2_dxknu"]
+[ext_resource type="AudioStream" uid="uid://d0chqobougdot" path="res://Assets/Instructions/Sliding ok.wav" id="3_bxjdl"]
+[ext_resource type="AudioStream" uid="uid://beb3wmipndno0" path="res://Assets/Instructions/Three.wav" id="4_tjvro"]
+[ext_resource type="AudioStream" uid="uid://c6rhjv6ttw68j" path="res://Assets/Instructions/Two.wav" id="5_filpd"]
+[ext_resource type="AudioStream" uid="uid://3eicjua3b4ll" path="res://Assets/Instructions/One.wav" id="6_dt6um"]
+[ext_resource type="AudioStream" uid="uid://dy3id6cqf1mht" path="res://Assets/Instructions/GO.wav" id="7_xtqhr"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_8p7yn"]
 font = ExtResource("2_dxknu")
@@ -341,9 +346,21 @@ tracks/1/path = NodePath(".")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(1.6),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.46666667, 0.93333334, 1.5333333, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "values": [{
+"args": [],
+"method": &"threeAudio"
+}, {
+"args": [],
+"method": &"twoAudio"
+}, {
+"args": [],
+"method": &"oneAudio"
+}, {
+"args": [],
+"method": &"end"
+}, {
 "args": [],
 "method": &"queue_free"
 }]
@@ -540,7 +557,7 @@ _data = {
 &"RESET": SubResource("Animation_dxknu")
 }
 
-[node name="Instructions" type="Control" node_paths=PackedStringArray("animator", "instruction_label", "title_label")]
+[node name="Instructions" type="Control" node_paths=PackedStringArray("animator", "instruction_label", "title_label", "start", "three", "two", "one", "go")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -553,6 +570,11 @@ script = ExtResource("1_8p7yn")
 animator = NodePath("Anim")
 instruction_label = NodePath("Control/Center/Instructions")
 title_label = NodePath("HBoxContainer/Boss/Control2/Title")
+start = NodePath("Start")
+three = NodePath("Three")
+two = NodePath("Two")
+one = NodePath("One")
+go = NodePath("GO")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -716,3 +738,18 @@ vertical_alignment = 1
 libraries = {
 &"": SubResource("AnimationLibrary_dxknu")
 }
+
+[node name="Start" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_bxjdl")
+
+[node name="Three" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_tjvro")
+
+[node name="Two" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_filpd")
+
+[node name="One" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_dt6um")
+
+[node name="GO" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_xtqhr")
