@@ -24,7 +24,9 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if is_boss_working:
 		EventBus.add_stress_to_boss.emit(stress_rate * delta)
+		EventBus.boss_working.emit(true)
 	else:
+		EventBus.boss_working.emit(false)
 		EventBus.add_stress_to_employee.emit(stress_rate * delta)
 	
 func next_challenge():

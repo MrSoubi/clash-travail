@@ -259,9 +259,11 @@ ambiance_boss = NodePath("AmbianceBoss")
 
 [node name="AmbianceEmployee" type="AudioStreamPlayer" parent="AmbianceSound"]
 stream = ExtResource("9_bypbs")
+volume_db = 2.073
 
 [node name="AmbianceBoss" type="AudioStreamPlayer" parent="AmbianceSound"]
 stream = ExtResource("10_76bsv")
+volume_db = 3.801
 
 [node name="BossWin" type="Control" parent="."]
 visible = false
