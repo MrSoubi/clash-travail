@@ -19,8 +19,8 @@
 [ext_resource type="AudioStream" uid="uid://dgnchn1xmj5jy" path="res://Assets/AMBIANCES/AMB_PATRON.wav" id="10_76bsv"]
 [ext_resource type="PackedScene" uid="uid://brndmg0cl6k82" path="res://Scenes/Employee Challenges/bebe_challenge.tscn" id="11_yedv1"]
 [ext_resource type="PackedScene" uid="uid://cqoptheygec35" path="res://Scenes/instructions.tscn" id="15_guu18"]
-[ext_resource type="Texture2D" uid="uid://bumdn8smowlix" path="res://Assets/bg-bureau-gray.png" id="16_rm2oa"]
 [ext_resource type="Texture2D" uid="uid://l1pdtk3g86li" path="res://Assets/bg-plage-V1.png" id="16_yedv1"]
+[ext_resource type="Texture2D" uid="uid://bo0ptoyojt8v6" path="res://Assets/bg-bureau-V1.png" id="17_yedv1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qm5y3"]
 content_margin_left = 0.0
@@ -206,7 +206,7 @@ offset_left = -21.5
 offset_right = 21.5
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("16_rm2oa")
+texture = ExtResource("17_yedv1")
 expand_mode = 2
 stretch_mode = 4
 
