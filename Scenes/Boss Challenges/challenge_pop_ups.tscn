@@ -6,8 +6,10 @@
 [node name="Challenge_PopUps" type="Control" node_paths=PackedStringArray("positions", "sfx")]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 1.0
-offset_right = 1.0
+offset_left = 15.0
+offset_top = 17.0
+offset_right = 15.0
+offset_bottom = 17.0
 size_flags_vertical = 3
 script = ExtResource("1_qu0aw")
 positions = [NodePath("Marker2D5"), NodePath("Marker2D6"), NodePath("Marker2D7"), NodePath("Marker2D9"), NodePath("Marker2D10"), NodePath("Marker2D11"), NodePath("Marker2D15"), NodePath("Marker2D16"), NodePath("Marker2D18"), NodePath("Marker2D20"), NodePath("Marker2D22"), NodePath("Marker2D24"), NodePath("Marker2D25")]
