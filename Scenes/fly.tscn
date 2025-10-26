@@ -1,7 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bu5dh1b1o6i1o"]
+[gd_scene load_steps=10 format=3 uid="uid://bu5dh1b1o6i1o"]
 
 [ext_resource type="Script" uid="uid://1w8b17x54vwp" path="res://Scenes/fly.gd" id="1_cu1fa"]
 [ext_resource type="Texture2D" uid="uid://dh8h7i6yrdio2" path="res://Assets/Mouche.gif" id="2_cu1fa"]
+[ext_resource type="AudioStream" uid="uid://e2i7w5c56rcp" path="res://Assets/Mouche/MOUCHE_01.wav" id="3_p3uj0"]
+[ext_resource type="AudioStream" uid="uid://bp0nb4gvi1y05" path="res://Assets/Mouche/MOUCHE_02.wav" id="4_fojns"]
+[ext_resource type="AudioStream" uid="uid://g4mvxwoikfdj" path="res://Assets/Mouche/MOUCHE_03.wav" id="5_pmu3r"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cu1fa"]
 radius = 140.0
@@ -44,9 +47,10 @@ _data = {
 &"fly_moving": SubResource("Animation_cu1fa")
 }
 
-[node name="Fly" type="Node2D"]
+[node name="Fly" type="Node2D" node_paths=PackedStringArray("flyingAudio")]
 scale = Vector2(0.3, 0.3)
 script = ExtResource("1_cu1fa")
+flyingAudio = [NodePath("AudioStreamPlayer"), NodePath("AudioStreamPlayer2"), NodePath("AudioStreamPlayer3")]
 
 [node name="Area2D" type="Area2D" parent="."]
 priority = 10
@@ -66,5 +70,14 @@ libraries = {
 &"": SubResource("AnimationLibrary_vyrwt")
 }
 autoplay = "fly_moving"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_p3uj0")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_fojns")
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_pmu3r")
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

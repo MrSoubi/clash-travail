@@ -1,10 +1,12 @@
 extends Node2D
 
 @onready var parent = get_parent() as PathFollow2D
+@export var flyingAudio : Array[AudioStreamPlayer]
 
 var time = randf_range(0, 3)
 
 func _ready() -> void:
+	flyingAudio[randi_range(0, 2)].play()
 	$AnimationPlayer.seek(time, true)
 
 func _physics_process(delta: float) -> void:
