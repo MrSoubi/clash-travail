@@ -66,11 +66,11 @@ func load_boss_challenge(index : int):
 	employee_zone.add_child(current_challenge_employee)
 
 func play_boss_instructions(index):
-	var instructions = boss_instructions[index].instantiate()
+	var instructions = boss_instructions[0].instantiate()
 	add_child(instructions)
 	await instructions.tree_exited
 	
 func play_employee_instructions(index):
-	var instructions = employee_instructions[index].instantiate()
+	var instructions = employee_instructions[0].instantiate()
 	add_child(instructions)
 	await instructions.tree_exited

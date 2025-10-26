@@ -92,7 +92,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("4_atls0")
-challenges_boss = Array[PackedScene]([ExtResource("7_w1m6e"), ExtResource("6_patxt"), ExtResource("8_guu18")])
+challenges_boss = Array[PackedScene]([ExtResource("8_guu18"), ExtResource("7_w1m6e"), ExtResource("6_patxt")])
 challenges_employee = Array[PackedScene]([ExtResource("5_fdjpt"), ExtResource("9_rm2oa"), ExtResource("11_yedv1")])
 employee_destress_game = ExtResource("7_76bsv")
 boss_destress_game = ExtResource("6_8djel")
@@ -100,7 +100,6 @@ employee_zone = NodePath("Control/HBoxContainer/EmployeePanel/MarginContainer/VB
 boss_zone = NodePath("Control/HBoxContainer/BossPanel/MarginContainer/VBoxContainer/BossZone")
 boss_instructions = Array[PackedScene]([ExtResource("15_guu18")])
 employee_instructions = Array[PackedScene]([ExtResource("15_guu18")])
-stress_rate = 10.0
 
 [node name="Control" type="Control" parent="Game"]
 layout_mode = 1
