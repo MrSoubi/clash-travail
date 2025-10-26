@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://t8hbmgqhvd2b"]
+[gd_scene load_steps=7 format=3 uid="uid://t8hbmgqhvd2b"]
 
+[ext_resource type="Texture2D" uid="uid://djnp6bl21ykh4" path="res://Assets/fenetre1.png" id="1_05qr1"]
 [ext_resource type="Script" uid="uid://b5kxqgtsgltdc" path="res://Scripts/pop_up.gd" id="1_tv3en"]
 [ext_resource type="AudioStream" uid="uid://6118f0a4iqux" path="res://Assets/Pop Up/Pop Up Close-01.wav" id="2_0ek4e"]
 [ext_resource type="AudioStream" uid="uid://2hpd04x7xm8q" path="res://Assets/Pop Up/Pop Up Close-02.wav" id="3_05qr1"]
@@ -12,20 +13,42 @@ stream_0/stream = ExtResource("2_0ek4e")
 stream_1/stream = ExtResource("3_05qr1")
 stream_2/stream = ExtResource("4_rl54y")
 
-[node name="PopUp2" type="Panel" node_paths=PackedStringArray("sfx")]
-offset_right = 50.0
-offset_bottom = 60.0
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="PopUp2" type="TextureRect" parent="." node_paths=PackedStringArray("sfx")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -229.0
+offset_top = -101.0
+offset_right = 539.0
+offset_bottom = 667.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+mouse_filter = 2
+texture = ExtResource("1_05qr1")
 script = ExtResource("1_tv3en")
 sfx = NodePath("AudioStreamPlayer")
 
-[node name="Button" type="Button" parent="."]
+[node name="Button" type="Button" parent="PopUp2"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_right = 15.0
-offset_bottom = 22.0
+offset_left = 476.0
+offset_top = 96.0
+offset_right = 503.645
+offset_bottom = 122.01
 theme_override_font_sizes/font_size = 10
-text = "X"
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="PopUp2"]
 stream = SubResource("AudioStreamRandomizer_5xndk")
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="PopUp2/Button" to="PopUp2" method="_on_button_pressed"]
