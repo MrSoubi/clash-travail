@@ -6,7 +6,8 @@ extends Node
 @export var boss_destress_game : PackedScene
 @export var employee_zone : Control
 @export var boss_zone : Control
-
+@export var boss_instructions : Array[PackedScene]
+@export var employee_instructions : Array[PackedScene]
 @export var stress_rate : float = 1
 
 var current_challenge_boss : Node
@@ -28,6 +29,7 @@ func _process(delta: float) -> void:
 		EventBus.add_stress_to_employee.emit(stress_rate * delta)
 	
 func next_challenge():
+	EventBus.pause_stress.emit()
 	is_boss_working = !is_boss_working
 	
 	if current_challenge_employee != null:
@@ -35,13 +37,17 @@ func next_challenge():
 	
 	if current_challenge_boss != null:
 		current_challenge_boss.queue_free()
-		
+	
 	if is_boss_working:
+		await play_boss_instructions(boss_challenge_index)
 		load_boss_challenge(boss_challenge_index)
+		EventBus.run_stress.emit()
 		boss_challenge_index += 1
 		boss_challenge_index = boss_challenge_index % challenges_boss.size()
 	else:
+		await play_employee_instructions(employee_challenge_index)
 		load_employee_challenge(employee_challenge_index)
+		EventBus.run_stress.emit()
 		employee_challenge_index += 1
 		employee_challenge_index = employee_challenge_index % challenges_employee.size()
 		
@@ -58,3 +64,13 @@ func load_boss_challenge(index : int):
 	
 	current_challenge_employee = employee_destress_game.instantiate()
 	employee_zone.add_child(current_challenge_employee)
+
+func play_boss_instructions(index):
+	var instructions = boss_instructions[index].instantiate()
+	add_child(instructions)
+	await instructions.tree_exited
+	
+func play_employee_instructions(index):
+	var instructions = employee_instructions[index].instantiate()
+	add_child(instructions)
+	await instructions.tree_exited

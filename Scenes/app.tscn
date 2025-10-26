@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cbjr6rdo4qbnx"]
+[gd_scene load_steps=20 format=3 uid="uid://cbjr6rdo4qbnx"]
 
 [ext_resource type="Script" uid="uid://oh6qgsqvkc2b" path="res://Scripts/stress-manager.gd" id="1_u0ug8"]
 [ext_resource type="Script" uid="uid://cbg2hhm6hi5p2" path="res://Scenes/app.gd" id="1_w1m6e"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://otkh7yeeoys7" path="res://Scenes/Employee Challenges/mail_precis_challenge.tscn" id="9_rm2oa"]
 [ext_resource type="AudioStream" uid="uid://dgnchn1xmj5jy" path="res://Assets/AMBIANCES/AMB_PATRON.wav" id="10_76bsv"]
 [ext_resource type="PackedScene" uid="uid://brndmg0cl6k82" path="res://Scenes/Employee Challenges/bebe_challenge.tscn" id="11_yedv1"]
+[ext_resource type="PackedScene" uid="uid://cqoptheygec35" path="res://Scenes/instructions.tscn" id="15_guu18"]
 
 [node name="App" type="Node" node_paths=PackedStringArray("Game", "MainMenu", "BossWin", "EmployeeWin")]
 script = ExtResource("1_w1m6e")
@@ -73,6 +74,8 @@ employee_destress_game = ExtResource("7_76bsv")
 boss_destress_game = ExtResource("8_85vr7")
 employee_zone = NodePath("Control/HBoxContainer/EmployeePanel/MarginContainer/VBoxContainer/EmployeeZone")
 boss_zone = NodePath("Control/HBoxContainer/BossPanel/MarginContainer/VBoxContainer/BossZone")
+boss_instructions = Array[PackedScene]([ExtResource("15_guu18")])
+employee_instructions = Array[PackedScene]([ExtResource("15_guu18")])
 stress_rate = 10.0
 
 [node name="Control" type="Control" parent="Game"]
