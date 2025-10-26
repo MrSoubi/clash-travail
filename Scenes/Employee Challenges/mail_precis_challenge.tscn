@@ -31,7 +31,8 @@ offset_right = 242.0
 offset_bottom = 388.0
 label_settings = SubResource("LabelSettings_uhqgg")
 
-[node name="Label" type="Label" parent="Label"]
+[node name="Panel" type="Panel" parent="Label"]
+show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -48,6 +49,7 @@ offset_bottom = 298.0
 label_settings = SubResource("LabelSettings_r3jeu")
 
 [node name="Panel" type="Panel" parent="Label2"]
+show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
