@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://cbjr6rdo4qbnx"]
+[gd_scene load_steps=23 format=3 uid="uid://cbjr6rdo4qbnx"]
 
 [ext_resource type="Script" uid="uid://oh6qgsqvkc2b" path="res://Scripts/stress-manager.gd" id="1_u0ug8"]
 [ext_resource type="Script" uid="uid://cbg2hhm6hi5p2" path="res://Scenes/app.gd" id="1_w1m6e"]
@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://bsah8d2sb0pwh" path="res://Scenes/Boss Challenges/challenge_pop_ups.tscn" id="6_patxt"]
 [ext_resource type="PackedScene" uid="uid://bmkbhng5blwhx" path="res://Scenes/Employee Challenges/destress_employee.tscn" id="7_76bsv"]
 [ext_resource type="PackedScene" uid="uid://b0ybp3jyhe22f" path="res://Scenes/Boss Challenges/augmentation_challenge.tscn" id="7_w1m6e"]
-[ext_resource type="PackedScene" uid="uid://b08ae601qbu0n" path="res://Scenes/Boss Challenges/destress_boss.tscn" id="8_85vr7"]
 [ext_resource type="PackedScene" uid="uid://b0oc6hcr4js4c" path="res://Scenes/Boss Challenges/mouche_challenge.tscn" id="8_guu18"]
 [ext_resource type="Script" uid="uid://c8qnpx8vo7jd5" path="res://Scripts/ambiance_sound_manager.gd" id="8_vl6qb"]
 [ext_resource type="AudioStream" uid="uid://b3gkc7jyxa8jw" path="res://Assets/AMBIANCES/AMB_EMP.wav" id="9_bypbs"]
@@ -93,10 +92,10 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("4_atls0")
-challenges_boss = Array[PackedScene]([ExtResource("6_8djel"), ExtResource("7_w1m6e"), ExtResource("6_patxt"), ExtResource("8_guu18")])
+challenges_boss = Array[PackedScene]([ExtResource("7_w1m6e"), ExtResource("6_patxt"), ExtResource("8_guu18")])
 challenges_employee = Array[PackedScene]([ExtResource("5_fdjpt"), ExtResource("9_rm2oa"), ExtResource("11_yedv1")])
 employee_destress_game = ExtResource("7_76bsv")
-boss_destress_game = ExtResource("8_85vr7")
+boss_destress_game = ExtResource("6_8djel")
 employee_zone = NodePath("Control/HBoxContainer/EmployeePanel/MarginContainer/VBoxContainer/EmployeeZone")
 boss_zone = NodePath("Control/HBoxContainer/BossPanel/MarginContainer/VBoxContainer/BossZone")
 boss_instructions = Array[PackedScene]([ExtResource("15_guu18")])
@@ -209,9 +208,6 @@ grow_vertical = 2
 texture = ExtResource("17_yedv1")
 expand_mode = 2
 stretch_mode = 4
-
-[node name="BourseChallenge" parent="Game/Control/HBoxContainer/BossPanel/MarginContainer/VBoxContainer/BossZone" instance=ExtResource("6_8djel")]
-layout_mode = 1
 
 [node name="ProgressBar" type="ProgressBar" parent="Game/Control/HBoxContainer/BossPanel/MarginContainer/VBoxContainer"]
 layout_mode = 2
