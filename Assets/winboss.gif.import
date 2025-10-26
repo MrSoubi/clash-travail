@@ -1,0 +1,14 @@
+[remap]
+
+importer="import_gif_to_animated_texture"
+type="AnimatedTexture"
+uid="uid://bpfcvj7pqjc4g"
+path="res://.godot/imported/winboss.gif-0d59016a3160cbe77263967aa00c9999.tres"
+
+[deps]
+
+source_file="res://Assets/winboss.gif"
+dest_files=["res://.godot/imported/winboss.gif-0d59016a3160cbe77263967aa00c9999.tres"]
+
+[params]
+

@@ -1,0 +1,14 @@
+[remap]
+
+importer="import_gif_to_animated_texture"
+type="AnimatedTexture"
+uid="uid://cr7wpahcyej1w"
+path="res://.godot/imported/winemployee.gif-36cf90474a7ea7903ced7aa5aca7b5a5.tres"
+
+[deps]
+
+source_file="res://Assets/winemployee.gif"
+dest_files=["res://.godot/imported/winemployee.gif-36cf90474a7ea7903ced7aa5aca7b5a5.tres"]
+
+[params]
+

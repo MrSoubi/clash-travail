@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://cbjr6rdo4qbnx"]
+[gd_scene load_steps=33 format=3 uid="uid://cbjr6rdo4qbnx"]
 
 [ext_resource type="Script" uid="uid://oh6qgsqvkc2b" path="res://Scripts/stress-manager.gd" id="1_u0ug8"]
 [ext_resource type="Script" uid="uid://cbg2hhm6hi5p2" path="res://Scenes/app.gd" id="1_w1m6e"]
@@ -28,6 +28,8 @@
 [ext_resource type="FontFile" uid="uid://c4oet4vxfxga0" path="res://Assets/GrapeSoda.ttf" id="21_fx41s"]
 [ext_resource type="StyleBox" uid="uid://dxmbl4nca4won" path="res://Assets/stress_bar_employee_style.tres" id="22_p23bk"]
 [ext_resource type="StyleBox" uid="uid://bvet4hr5auym7" path="res://Assets/stress_bar_boss_style.tres" id="23_rdw6j"]
+[ext_resource type="Texture2D" uid="uid://bpfcvj7pqjc4g" path="res://Assets/winboss.gif" id="29_i40ft"]
+[ext_resource type="Texture2D" uid="uid://cr7wpahcyej1w" path="res://Assets/winemployee.gif" id="30_tb7mq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qm5y3"]
 content_margin_left = 0.0
@@ -260,6 +262,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("29_i40ft")
 
 [node name="MarginContainer" type="MarginContainer" parent="BossWin"]
 layout_mode = 1
@@ -292,6 +295,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("30_tb7mq")
 
 [node name="MarginContainer" type="MarginContainer" parent="EmployeeWin"]
 layout_mode = 1
