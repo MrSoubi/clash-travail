@@ -11,7 +11,7 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	if parent is PathFollow2D:
-		parent.set_progress(parent.get_progress() + 400 * delta)
+		parent.set_progress(parent.get_progress() + 300 * delta)
 
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton:

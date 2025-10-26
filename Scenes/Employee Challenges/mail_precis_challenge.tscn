@@ -9,6 +9,7 @@ font_size = 30
 font_color = Color(1, 0.45999998, 0.45999998, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_r3jeu"]
+font = ExtResource("2_r3jeu")
 font_size = 30
 
 [node name="MailPrecis" type="Control" node_paths=PackedStringArray("txt", "txt_info")]
@@ -42,10 +43,10 @@ grow_vertical = 2
 
 [node name="Label2" type="Label" parent="."]
 layout_mode = 0
-offset_left = 208.0
-offset_top = 275.0
-offset_right = 248.0
-offset_bottom = 298.0
+offset_left = 201.0
+offset_top = 276.0
+offset_right = 241.0
+offset_bottom = 318.0
 label_settings = SubResource("LabelSettings_r3jeu")
 
 [node name="Panel" type="Panel" parent="Label2"]

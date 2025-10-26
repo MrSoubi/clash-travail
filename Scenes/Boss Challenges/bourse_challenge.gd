@@ -15,7 +15,7 @@ func _ready() -> void:
 
 func buy():
 	sfx_good.play()
-	EventBus.add_stress_to_boss.emit(-0.75)
+	EventBus.add_stress_to_boss.emit(-1)
 	buy_button.visible = false
 	await get_tree().create_timer(0.2).timeout
 	buy_button.visible = true
