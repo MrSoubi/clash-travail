@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ch5urvmoaebc"]
+[gd_scene load_steps=17 format=3 uid="uid://ch5urvmoaebc"]
 
 [ext_resource type="Script" uid="uid://3mv5vrtefggu" path="res://Scenes/Boss Challenges/bourse_challenge.gd" id="1_8akf4"]
 [ext_resource type="LabelSettings" uid="uid://v8b1meqia0ld" path="res://Assets/positive_settings.tres" id="2_wahrg"]
@@ -6,6 +6,10 @@
 [ext_resource type="AudioStream" uid="uid://pknq2fwuggdw" path="res://Assets/Banque/Banque Achat.wav" id="4_evuem"]
 [ext_resource type="AudioStream" uid="uid://bwlv8xh3j6qr2" path="res://Assets/Banque/Banque Achat-01.wav" id="5_akblm"]
 [ext_resource type="AudioStream" uid="uid://c7eepk0h6avv7" path="res://Assets/Banque/Banque Achat-02.wav" id="6_3kf3b"]
+[ext_resource type="Texture2D" uid="uid://cygfy8x3snqy8" path="res://Assets/bourse_1.png" id="7_au38q"]
+[ext_resource type="Texture2D" uid="uid://tayav8sjwt4s" path="res://Assets/bourse_2.png" id="8_wljh5"]
+[ext_resource type="Texture2D" uid="uid://3yjoxuniy4kl" path="res://Assets/bouton_A.png" id="9_x0qwx"]
+[ext_resource type="Texture2D" uid="uid://mcawdhkfhddo" path="res://Assets/bouton_B.png" id="10_ilpkn"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_547ld"]
 random_pitch = 1.75
@@ -14,7 +18,80 @@ stream_0/stream = ExtResource("4_evuem")
 stream_1/stream = ExtResource("5_akblm")
 stream_2/stream = ExtResource("6_3kf3b")
 
-[node name="BourseChallenge" type="Control" node_paths=PackedStringArray("buy_button", "info", "sfx_good")]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7owky"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.6, 0.6, 0.6, 0)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wljh5"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 0)
+border_color = Color(0.8, 0.8, 0.8, 0)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_au38q"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.22352941, 0.22352941, 0.22352941, 0)
+border_color = Color(0.8, 0.8, 0.8, 0)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ilpkn"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.101960786, 0.101960786, 0.101960786, 0)
+border_color = Color(0.8, 0.8, 0.8, 0)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x0qwx"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.8, 0.8, 0.8, 0)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[node name="BourseChallenge" type="Control" node_paths=PackedStringArray("bourse1", "bourse2", "boutonA", "boutonB", "button", "sfx_good")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -22,31 +99,50 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_8akf4")
-buy_button = NodePath("VBoxContainer/Button2")
-info = NodePath("VBoxContainer/Label")
+bourse1 = NodePath("Bourse1")
+bourse2 = NodePath("Bourse2")
+boutonA = NodePath("BoutonA")
+boutonB = NodePath("BoutonB")
+button = NodePath("BoutonA/Button")
 settings_positive = ExtResource("2_wahrg")
 settings_negative = ExtResource("3_uvj2a")
 sfx_good = NodePath("AudioStreamPlayerGood")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 0
-offset_left = 383.0
-offset_top = 367.0
-offset_right = 453.64
-offset_bottom = 473.0
-
-[node name="Label" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-text = "+12%"
-label_settings = ExtResource("3_uvj2a")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Button2" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-text = "INVEST"
 
 [node name="AudioStreamPlayerGood" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_547ld")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="Bourse1" type="Sprite2D" parent="."]
+position = Vector2(258.18445, 272.89444)
+scale = Vector2(0.8780845, 0.9788918)
+texture = ExtResource("7_au38q")
+
+[node name="Bourse2" type="Sprite2D" parent="."]
+position = Vector2(258.18445, 273.89444)
+scale = Vector2(0.8780845, 0.9788918)
+texture = ExtResource("8_wljh5")
+
+[node name="BoutonA" type="Sprite2D" parent="."]
+position = Vector2(264.18445, 274.89444)
+scale = Vector2(0.8780845, 0.9788918)
+texture = ExtResource("9_x0qwx")
+
+[node name="Button" type="Button" parent="BoutonA"]
+offset_left = 134.0
+offset_top = 148.0
+offset_right = 219.28
+offset_bottom = 191.905
+theme_override_styles/normal = SubResource("StyleBoxFlat_7owky")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wljh5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_au38q")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_ilpkn")
+theme_override_styles/focus = SubResource("StyleBoxFlat_x0qwx")
+metadata/_edit_use_anchors_ = true
+
+[node name="BoutonB" type="Sprite2D" parent="."]
+position = Vector2(265.18445, 274.89444)
+scale = Vector2(0.8780845, 0.9788918)
+texture = ExtResource("10_ilpkn")
+
+[connection signal="pressed" from="BoutonA/Button" to="." method="_on_button_pressed"]

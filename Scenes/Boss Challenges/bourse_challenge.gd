@@ -1,8 +1,11 @@
 extends Control
 
-@export var buy_button : Button
+@export var bourse1 : Sprite2D
+@export var bourse2 : Sprite2D
+@export var boutonA : Sprite2D
+@export var boutonB : Sprite2D
 
-@export var info : Label
+@export var button : Button
 
 @export var settings_positive : LabelSettings
 @export var settings_negative : LabelSettings
@@ -10,21 +13,23 @@ extends Control
 @export var sfx_good : AudioStreamPlayer
 
 func _ready() -> void:
-	buy_button.pressed.connect(buy)
-	next()
+	button.visible = true
+	boutonA.visible = true
+	boutonB.visible = false
+	bourse1.visible = true
+	bourse2.visible = false
 
-func buy():
+func _on_button_pressed() -> void:
 	sfx_good.play()
-	EventBus.add_stress_to_boss.emit(-1)
-	buy_button.visible = false
+	EventBus.add_stress_to_boss.emit(-0.75)
+	bourse1.visible = false
+	boutonA.visible = false
+	boutonB.visible = true
+	bourse2.visible = true
+	button.visible = false
 	await get_tree().create_timer(0.2).timeout
-	buy_button.visible = true
-	next()
-
-func next():
-	var value = randf_range(-12, 12)
-	info.text = str(snappedf(value, 0.5)) + "%"
-	if value > 0:
-		info.label_settings = settings_positive
-	else:
-		info.label_settings = settings_negative
+	button.visible = true
+	boutonA.visible = true
+	boutonB.visible = false
+	bourse1.visible = true
+	bourse2.visible = false
