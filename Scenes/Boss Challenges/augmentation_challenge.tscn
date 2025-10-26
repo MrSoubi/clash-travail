@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b0ybp3jyhe22f"]
+[gd_scene load_steps=11 format=3 uid="uid://b0ybp3jyhe22f"]
 
 [ext_resource type="Script" uid="uid://b5nfde4we7prk" path="res://Scenes/Boss Challenges/augmentation_challenge.gd" id="1_6b1dl"]
 [ext_resource type="Script" uid="uid://du20nhsbamdx8" path="res://Scenes/Boss Challenges/augmentation_slider.gd" id="2_hi8u6"]
@@ -7,6 +7,8 @@
 [ext_resource type="AudioStream" uid="uid://cpjmrteo7216u" path="res://Assets/Slider/Sliding ok FB.wav" id="5_rpomu"]
 [ext_resource type="AudioStream" uid="uid://0cd5n8i2h75x" path="res://Assets/Slider/Sliding ok-01.wav" id="6_ymg7k"]
 [ext_resource type="AudioStream" uid="uid://xqvltie6ixf0" path="res://Assets/Slider/Sliding wrong.wav" id="7_osasj"]
+[ext_resource type="Texture2D" uid="uid://n8fgcaxmxnxr" path="res://Assets/main_souris_patron.png" id="8_ymg7k"]
+[ext_resource type="Script" uid="uid://bxx0651ykv83q" path="res://Scenes/Boss Challenges/main_souris_patron.gd" id="9_osasj"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_6b1dl"]
 font_size = 26
@@ -127,3 +129,8 @@ stream = ExtResource("6_ymg7k")
 
 [node name="Wrong" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_osasj")
+
+[node name="MainSourisPatron" type="Sprite2D" parent="."]
+position = Vector2(272, 308)
+texture = ExtResource("8_ymg7k")
+script = ExtResource("9_osasj")
