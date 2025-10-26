@@ -14,6 +14,7 @@ func _ready() -> void:
 		new_popup.tree_exited.connect(on_popup_closed)
 		
 func on_popup_closed():
+	print(popup_count)
 	popup_count -= 1
 	if popup_count == 0:
 		sfx.play()
