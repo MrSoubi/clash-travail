@@ -1,10 +1,63 @@
-[gd_scene load_steps=4 format=3 uid="uid://brndmg0cl6k82"]
+[gd_scene load_steps=9 format=3 uid="uid://brndmg0cl6k82"]
 
 [ext_resource type="Script" uid="uid://critch2lv16k2" path="res://Scenes/Employee Challenges/bebe_challenge.gd" id="1_vk2vp"]
 [ext_resource type="Texture2D" uid="uid://dhvyxt8acrsp8" path="res://Assets/DownButton.gif" id="2_7l1rh"]
 [ext_resource type="Texture2D" uid="uid://bchbcoi7vxl3m" path="res://Assets/UpButton.gif" id="3_oj4yr"]
+[ext_resource type="Texture2D" uid="uid://brrct36incqro" path="res://Assets/beer.png" id="4_oj4yr"]
 
-[node name="BebeChallenge" type="Control" node_paths=PackedStringArray("upSprite", "downSprite")]
+[sub_resource type="Animation" id="Animation_1486x"]
+resource_name = "ShakeUp"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control:rotation")
+tracks/0/interp = 4
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.46054152, 0.33492944]
+}
+
+[sub_resource type="Animation" id="Animation_iss00"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.46054152]
+}
+
+[sub_resource type="Animation" id="Animation_rl3lk"]
+resource_name = "ShakeDown"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control:rotation")
+tracks/0/interp = 4
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.33492944, -0.46054152]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cs3dd"]
+_data = {
+&"RESET": SubResource("Animation_iss00"),
+&"ShakeDown": SubResource("Animation_rl3lk"),
+&"ShakeUp": SubResource("Animation_1486x")
+}
+
+[node name="BebeChallenge" type="Control" node_paths=PackedStringArray("upSprite", "downSprite", "beerAnim")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -14,6 +67,7 @@ grow_vertical = 2
 script = ExtResource("1_vk2vp")
 upSprite = NodePath("Sprite2D2")
 downSprite = NodePath("Sprite2D")
+beerAnim = NodePath("AnimationPlayer")
 
 [node name="Sprite2D" type="TextureRect" parent="."]
 layout_mode = 1
@@ -40,3 +94,35 @@ offset_right = 128.0
 offset_bottom = 64.0
 grow_vertical = 2
 texture = ExtResource("3_oj4yr")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+offset_left = 570.0
+offset_top = 689.99994
+offset_right = 570.0
+offset_bottom = 689.99994
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.46054152
+
+[node name="Beer" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -237.0
+offset_top = -474.0
+offset_right = 563.0
+offset_bottom = 726.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.23519076
+scale = Vector2(0.385, 0.385)
+texture = ExtResource("4_oj4yr")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_cs3dd")
+}

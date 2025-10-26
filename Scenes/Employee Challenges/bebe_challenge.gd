@@ -2,10 +2,15 @@ extends Control
 
 @export var upSprite : TextureRect
 @export var downSprite : TextureRect
+@export var beerAnim : AnimationPlayer
 var baseSize : Vector2 = Vector2(1, 1)
 var bigSize : Vector2 = Vector2(1.2, 1.2)
 
 var sequence = [
+	'Up',
+	'Down',
+	'Up',
+	'Down',
 	'Up',
 	'Down',
 	'Up',
@@ -51,11 +56,13 @@ func _input(event):
 		if event.as_text_keycode() == sequence[sequence_index]:
 			sequence_index += 1
 			if event.as_text_keycode() == "Down":
+				beerAnim.play("ShakeDown")
 				downSprite.scale = baseSize
 				downSprite.modulate.a = 0.5
 				upSprite.scale = bigSize
 				upSprite.modulate.a = 1
 			if event.as_text_keycode() == "Up":
+				beerAnim.play("ShakeUp")
 				downSprite.scale = bigSize
 				downSprite.modulate.a = 1
 				upSprite.scale = baseSize
