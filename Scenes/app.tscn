@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cbjr6rdo4qbnx"]
+[gd_scene load_steps=22 format=3 uid="uid://cbjr6rdo4qbnx"]
 
 [ext_resource type="Script" uid="uid://oh6qgsqvkc2b" path="res://Scripts/stress-manager.gd" id="1_u0ug8"]
 [ext_resource type="Script" uid="uid://cbg2hhm6hi5p2" path="res://Scenes/app.gd" id="1_w1m6e"]
@@ -19,6 +19,8 @@
 [ext_resource type="AudioStream" uid="uid://dgnchn1xmj5jy" path="res://Assets/AMBIANCES/AMB_PATRON.wav" id="10_76bsv"]
 [ext_resource type="PackedScene" uid="uid://brndmg0cl6k82" path="res://Scenes/Employee Challenges/bebe_challenge.tscn" id="11_yedv1"]
 [ext_resource type="PackedScene" uid="uid://cqoptheygec35" path="res://Scenes/instructions.tscn" id="15_guu18"]
+[ext_resource type="Texture2D" uid="uid://bumdn8smowlix" path="res://Assets/bg-bureau-gray.png" id="16_rm2oa"]
+[ext_resource type="Texture2D" uid="uid://l1pdtk3g86li" path="res://Assets/bg-plage-V1.png" id="16_yedv1"]
 
 [node name="App" type="Node" node_paths=PackedStringArray("Game", "MainMenu", "BossWin", "EmployeeWin")]
 script = ExtResource("1_w1m6e")
@@ -28,6 +30,7 @@ BossWin = NodePath("BossWin")
 EmployeeWin = NodePath("EmployeeWin")
 
 [node name="MainMenu" type="Control" parent="." node_paths=PackedStringArray("game")]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -100,7 +103,6 @@ alignment = 1
 [node name="EmployeePanel" type="Control" parent="Game/Control/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 0.65
 mouse_filter = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="Game/Control/HBoxContainer/EmployeePanel"]
@@ -120,10 +122,24 @@ theme_override_constants/margin_bottom = 10
 layout_mode = 2
 mouse_filter = 2
 
-[node name="EmployeeZone" type="Control" parent="Game/Control/HBoxContainer/EmployeePanel/MarginContainer/VBoxContainer"]
+[node name="EmployeeZone" type="Panel" parent="Game/Control/HBoxContainer/EmployeePanel/MarginContainer/VBoxContainer"]
+clip_children = 1
 layout_mode = 2
 size_flags_vertical = 3
 mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="Game/Control/HBoxContainer/EmployeePanel/MarginContainer/VBoxContainer/EmployeeZone"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -21.5
+offset_right = 21.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("16_yedv1")
+expand_mode = 2
+stretch_mode = 4
 
 [node name="ProgressBar" type="ProgressBar" parent="Game/Control/HBoxContainer/EmployeePanel/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -151,10 +167,22 @@ theme_override_constants/margin_bottom = 10
 layout_mode = 2
 mouse_filter = 2
 
-[node name="BossZone" type="Control" parent="Game/Control/HBoxContainer/BossPanel/MarginContainer/VBoxContainer"]
+[node name="BossZone" type="Panel" parent="Game/Control/HBoxContainer/BossPanel/MarginContainer/VBoxContainer"]
+clip_children = 1
 layout_mode = 2
 size_flags_vertical = 3
 mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="Game/Control/HBoxContainer/BossPanel/MarginContainer/VBoxContainer/BossZone"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("16_rm2oa")
+expand_mode = 2
+stretch_mode = 4
 
 [node name="ProgressBar" type="ProgressBar" parent="Game/Control/HBoxContainer/BossPanel/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -177,6 +205,7 @@ stream = ExtResource("9_bypbs")
 stream = ExtResource("10_76bsv")
 
 [node name="BossWin" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -208,6 +237,7 @@ size_flags_vertical = 8
 text = "Retour"
 
 [node name="EmployeeWin" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
