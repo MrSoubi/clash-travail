@@ -50,13 +50,13 @@ layout_mode = 1
 offset_left = 335.0
 offset_top = 274.0
 offset_right = 649.0
-offset_bottom = 832.0
+offset_bottom = 749.4711
 scale = Vector2(0.50718755, 0.4101196)
 horizontal_scroll_mode = 0
 vertical_scroll_mode = 3
 script = ExtResource("1_gg4gm")
 textures = [NodePath("VBoxContainer/TextureRect"), NodePath("VBoxContainer/TextureRect2"), NodePath("VBoxContainer/TextureRect3"), NodePath("VBoxContainer/TextureRect4")]
-stress_amount = -1.0
+stress_amount = -4.0
 sfx = NodePath("../AudioStreamPlayer")
 delay = 1.0
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://t8hbmgqhvd2b"]
 
 [ext_resource type="Texture2D" uid="uid://djnp6bl21ykh4" path="res://Assets/fenetre1.png" id="1_05qr1"]
-[ext_resource type="Script" uid="uid://dqg2cd1di51wy" path="res://Scenes/pop_up_selector.gd" id="1_5xndk"]
+[ext_resource type="Script" path="res://Scenes/pop_up_selector.gd" id="1_5xndk"]
 [ext_resource type="Script" uid="uid://b5kxqgtsgltdc" path="res://Scripts/pop_up.gd" id="1_tv3en"]
 [ext_resource type="AudioStream" uid="uid://6118f0a4iqux" path="res://Assets/Pop Up/Pop Up Close-01.wav" id="2_0ek4e"]
 [ext_resource type="AudioStream" uid="uid://2hpd04x7xm8q" path="res://Assets/Pop Up/Pop Up Close-02.wav" id="3_05qr1"]
@@ -46,10 +46,10 @@ sfx = NodePath("AudioStreamPlayer")
 [node name="Button" type="Button" parent="PopUp2"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 476.0
-offset_top = 96.0
-offset_right = 503.645
-offset_bottom = 122.01
+offset_left = 462.0
+offset_top = 70.0
+offset_right = 522.0
+offset_bottom = 130.0
 theme_override_font_sizes/font_size = 10
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="PopUp2"]
@@ -77,9 +77,9 @@ sfx = NodePath("AudioStreamPlayer")
 [node name="Button" type="Button" parent="PopUp3"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 340.0
-offset_top = 90.00001
-offset_right = 367.645
+offset_left = 333.33334
+offset_top = 82.22222
+offset_right = 374.44446
 offset_bottom = 116.01001
 theme_override_font_sizes/font_size = 10
 

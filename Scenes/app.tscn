@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://bmkbhng5blwhx" path="res://Scenes/Employee Challenges/destress_employee.tscn" id="7_76bsv"]
 [ext_resource type="PackedScene" uid="uid://b0ybp3jyhe22f" path="res://Scenes/Boss Challenges/augmentation_challenge.tscn" id="7_w1m6e"]
 [ext_resource type="PackedScene" uid="uid://b0oc6hcr4js4c" path="res://Scenes/Boss Challenges/mouche_challenge.tscn" id="8_guu18"]
-[ext_resource type="Script" uid="uid://c8qnpx8vo7jd5" path="res://Scripts/ambiance_sound_manager.gd" id="8_vl6qb"]
+[ext_resource type="Script" path="res://Scripts/ambiance_sound_manager.gd" id="8_vl6qb"]
 [ext_resource type="AudioStream" uid="uid://b3gkc7jyxa8jw" path="res://Assets/AMBIANCES/AMB_EMP.wav" id="9_bypbs"]
 [ext_resource type="PackedScene" uid="uid://otkh7yeeoys7" path="res://Scenes/Employee Challenges/mail_precis_challenge.tscn" id="9_rm2oa"]
 [ext_resource type="AudioStream" uid="uid://dgnchn1xmj5jy" path="res://Assets/AMBIANCES/AMB_PATRON.wav" id="10_76bsv"]
@@ -126,6 +126,7 @@ employee_zone = NodePath("Control/HBoxContainer/EmployeePanel/MarginContainer/VB
 boss_zone = NodePath("Control/HBoxContainer/BossPanel/MarginContainer/VBoxContainer/BossZone")
 boss_instructions = Array[PackedScene]([ExtResource("16_rdw6j"), ExtResource("14_cbud4"), ExtResource("15_fx41s")])
 employee_instructions = Array[PackedScene]([ExtResource("17_p23bk"), ExtResource("18_ui4da"), ExtResource("19_i40ft")])
+stress_rate = 6.0
 
 [node name="Control" type="Control" parent="Game"]
 layout_mode = 1

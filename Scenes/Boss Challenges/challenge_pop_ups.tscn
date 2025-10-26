@@ -12,11 +12,8 @@ offset_right = 15.0
 offset_bottom = 17.0
 size_flags_vertical = 3
 script = ExtResource("1_qu0aw")
-positions = [NodePath("Marker2D5"), NodePath("Marker2D6"), NodePath("Marker2D7"), NodePath("Marker2D9"), NodePath("Marker2D10"), NodePath("Marker2D11"), NodePath("Marker2D15"), NodePath("Marker2D16"), NodePath("Marker2D18"), NodePath("Marker2D20"), NodePath("Marker2D22"), NodePath("Marker2D24"), NodePath("Marker2D25")]
+positions = [NodePath("Marker2D6"), NodePath("Marker2D7"), NodePath("Marker2D9"), NodePath("Marker2D10"), NodePath("Marker2D11"), NodePath("Marker2D15"), NodePath("Marker2D22"), NodePath("Marker2D24"), NodePath("Marker2D25")]
 sfx = NodePath("AudioStreamPlayer")
-
-[node name="Marker2D5" type="Marker2D" parent="."]
-position = Vector2(182, 187)
 
 [node name="Marker2D6" type="Marker2D" parent="."]
 position = Vector2(260, 62)
@@ -25,7 +22,7 @@ position = Vector2(260, 62)
 position = Vector2(353, 129)
 
 [node name="Marker2D9" type="Marker2D" parent="."]
-position = Vector2(316, 175)
+position = Vector2(258, 180)
 
 [node name="Marker2D10" type="Marker2D" parent="."]
 position = Vector2(333, 59)
@@ -34,22 +31,13 @@ position = Vector2(333, 59)
 position = Vector2(188, 119)
 
 [node name="Marker2D15" type="Marker2D" parent="."]
-position = Vector2(309, 104)
-
-[node name="Marker2D16" type="Marker2D" parent="."]
-position = Vector2(270, 129)
-
-[node name="Marker2D18" type="Marker2D" parent="."]
-position = Vector2(251, 180)
-
-[node name="Marker2D20" type="Marker2D" parent="."]
-position = Vector2(187, 46)
+position = Vector2(298, 130)
 
 [node name="Marker2D22" type="Marker2D" parent="."]
 position = Vector2(382, 101)
 
 [node name="Marker2D24" type="Marker2D" parent="."]
-position = Vector2(380, 193)
+position = Vector2(375, 179)
 
 [node name="Marker2D25" type="Marker2D" parent="."]
 position = Vector2(229, 101)

@@ -35,12 +35,10 @@ theme_override_fonts/normal_font = ExtResource("1_uo02p")
 theme_override_font_sizes/normal_font_size = 25
 text = "Cher Monsieur,
 
-Stagiaire au sein de votre entreprise depuis 20 ans, je suis heureuse de poursuivre depuis cette date la réalisation des missions qui me sont confiées avec enthousiasme et détermination.
-
-Ainsi, je vous prie donc de bien vouloir considérer une revalorisation de mon salaire aujourd'hui fixé à 1 801,80€ afin de le porter à 1 802€.
+Stagiaire au sein de votre entreprise depuis 20 ans,  je vous prie donc de bien vouloir considérer une revalorisation de mon salaire aujourd'hui fixé à 1 801,80€ afin de le porter à 1 802€.
 
 Dans l'attente d'un retour, je l'espère, favorable de votre part.
-Veuillez agréer, Madame, Monsieur, l'expression de ma haute considération."
+Veuillez agréer, Monsieur, l'expression de ma haute considération."
 scroll_active = false
 scroll_following = true
 scroll_following_visible_characters = true
@@ -66,10 +64,10 @@ grow_vertical = 2
 [node name="Sprite2D" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.166
-anchor_top = 0.3
-anchor_right = 0.215
-anchor_bottom = 0.3
+anchor_left = 0.299
+anchor_top = 0.219
+anchor_right = 0.476
+anchor_bottom = 0.341
 offset_top = -64.0
 offset_right = 128.0
 offset_bottom = 64.0
