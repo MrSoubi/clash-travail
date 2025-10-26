@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdeypmq6mrn1x"]
+
+[ext_resource type="PackedScene" uid="uid://cqoptheygec35" path="res://Scenes/instructions.tscn" id="1_eqvrg"]
+
+[node name="Instructions" instance=ExtResource("1_eqvrg")]
+
+[node name="Instructions" parent="Control/Center" index="0"]
+text = "DEMANDE UNE AUGMENTATION !"

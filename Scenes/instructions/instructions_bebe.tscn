@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7lg0fb2xkghc"]
+
+[ext_resource type="PackedScene" uid="uid://cqoptheygec35" path="res://Scenes/instructions.tscn" id="1_8h6ec"]
+
+[node name="Instructions" instance=ExtResource("1_8h6ec")]
+
+[node name="Instructions" parent="Control/Center" index="0"]
+text = "SECOUE LA BINOUZE !"

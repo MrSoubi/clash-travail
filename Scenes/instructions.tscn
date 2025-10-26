@@ -628,10 +628,10 @@ anchor_left = 0.75
 anchor_top = 0.5
 anchor_right = 0.75
 anchor_bottom = 0.5
-offset_left = -62.0
-offset_top = -11.5
-offset_right = 62.0
-offset_bottom = 11.5
+offset_left = -254.56
+offset_top = -72.0
+offset_right = 255.0
+offset_bottom = 72.0
 grow_horizontal = 2
 grow_vertical = 2
 rotation = -0.5235988
@@ -640,6 +640,7 @@ text = "INSTRUCTIONS !"
 label_settings = SubResource("LabelSettings_dxknu")
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1

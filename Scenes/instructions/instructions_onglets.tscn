@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://ctql0v0dnmv1g"]
+
+[ext_resource type="PackedScene" uid="uid://cqoptheygec35" path="res://Scenes/instructions.tscn" id="1_1twru"]
+
+[node name="Instructions" instance=ExtResource("1_1twru")]
+is_boss_challenge = true
+
+[node name="Instructions" parent="Control/Center" index="0"]
+text = "FERME LES ONGLETS !"

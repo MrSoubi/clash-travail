@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://g8t50tw4yql"]
+
+[ext_resource type="PackedScene" uid="uid://cqoptheygec35" path="res://Scenes/instructions.tscn" id="1_kjr60"]
+
+[node name="Instructions" instance=ExtResource("1_kjr60")]
+is_boss_challenge = true
+
+[node name="Instructions" parent="Control/Center" index="0"]
+text = "TUE LES MOUCHES !"
