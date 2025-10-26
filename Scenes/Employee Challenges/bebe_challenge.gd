@@ -6,6 +6,8 @@ extends Control
 var baseSize : Vector2 = Vector2(1, 1)
 var bigSize : Vector2 = Vector2(1.2, 1.2)
 
+@export var sfx : AudioStreamPlayer
+
 var sequence = [
 	'Up',
 	'Down',
@@ -55,6 +57,8 @@ func _input(event):
 	if event is InputEventKey and event.pressed:
 		if event.as_text_keycode() == sequence[sequence_index]:
 			sequence_index += 1
+			sfx.pitch_scale = randf_range(0.80, 1)
+			sfx.play()
 			if event.as_text_keycode() == "Down":
 				beerAnim.play("ShakeDown")
 				downSprite.scale = baseSize

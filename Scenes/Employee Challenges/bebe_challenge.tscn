@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://brndmg0cl6k82"]
+[gd_scene load_steps=10 format=3 uid="uid://brndmg0cl6k82"]
 
 [ext_resource type="Script" uid="uid://critch2lv16k2" path="res://Scenes/Employee Challenges/bebe_challenge.gd" id="1_vk2vp"]
 [ext_resource type="Texture2D" uid="uid://dhvyxt8acrsp8" path="res://Assets/DownButton.gif" id="2_7l1rh"]
 [ext_resource type="Texture2D" uid="uid://bchbcoi7vxl3m" path="res://Assets/UpButton.gif" id="3_oj4yr"]
 [ext_resource type="Texture2D" uid="uid://brrct36incqro" path="res://Assets/beer.png" id="4_oj4yr"]
+[ext_resource type="AudioStream" uid="uid://5fxaw58p80mf" path="res://Assets/Binouze/UI_Hover.wav" id="5_1486x"]
 
 [sub_resource type="Animation" id="Animation_1486x"]
 resource_name = "ShakeUp"
@@ -57,7 +58,7 @@ _data = {
 &"ShakeUp": SubResource("Animation_1486x")
 }
 
-[node name="BebeChallenge" type="Control" node_paths=PackedStringArray("upSprite", "downSprite", "beerAnim")]
+[node name="BebeChallenge" type="Control" node_paths=PackedStringArray("upSprite", "downSprite", "beerAnim", "sfx")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -68,6 +69,7 @@ script = ExtResource("1_vk2vp")
 upSprite = NodePath("Sprite2D2")
 downSprite = NodePath("Sprite2D")
 beerAnim = NodePath("AnimationPlayer")
+sfx = NodePath("AudioStreamPlayer")
 
 [node name="Sprite2D" type="TextureRect" parent="."]
 layout_mode = 1
@@ -126,3 +128,6 @@ texture = ExtResource("4_oj4yr")
 libraries = {
 &"": SubResource("AnimationLibrary_cs3dd")
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_1486x")
