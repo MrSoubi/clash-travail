@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cbjr6rdo4qbnx"]
+[gd_scene load_steps=24 format=3 uid="uid://cbjr6rdo4qbnx"]
 
 [ext_resource type="Script" uid="uid://oh6qgsqvkc2b" path="res://Scripts/stress-manager.gd" id="1_u0ug8"]
 [ext_resource type="Script" uid="uid://cbg2hhm6hi5p2" path="res://Scenes/app.gd" id="1_w1m6e"]
@@ -21,6 +21,28 @@
 [ext_resource type="PackedScene" uid="uid://cqoptheygec35" path="res://Scenes/instructions.tscn" id="15_guu18"]
 [ext_resource type="Texture2D" uid="uid://bumdn8smowlix" path="res://Assets/bg-bureau-gray.png" id="16_rm2oa"]
 [ext_resource type="Texture2D" uid="uid://l1pdtk3g86li" path="res://Assets/bg-plage-V1.png" id="16_yedv1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qm5y3"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yedv1"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
 
 [node name="App" type="Node" node_paths=PackedStringArray("Game", "MainMenu", "BossWin", "EmployeeWin")]
 script = ExtResource("1_w1m6e")
@@ -127,6 +149,7 @@ clip_children = 1
 layout_mode = 2
 size_flags_vertical = 3
 mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qm5y3")
 
 [node name="TextureRect" type="TextureRect" parent="Game/Control/HBoxContainer/EmployeePanel/MarginContainer/VBoxContainer/EmployeeZone"]
 layout_mode = 1
@@ -172,12 +195,15 @@ clip_children = 1
 layout_mode = 2
 size_flags_vertical = 3
 mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_yedv1")
 
 [node name="TextureRect" type="TextureRect" parent="Game/Control/HBoxContainer/BossPanel/MarginContainer/VBoxContainer/BossZone"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -21.5
+offset_right = 21.5
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("16_rm2oa")

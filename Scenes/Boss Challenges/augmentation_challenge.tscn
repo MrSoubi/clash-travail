@@ -1,26 +1,40 @@
-[gd_scene load_steps=3 format=3 uid="uid://b0ybp3jyhe22f"]
+[gd_scene load_steps=5 format=3 uid="uid://b0ybp3jyhe22f"]
 
 [ext_resource type="Script" uid="uid://b5nfde4we7prk" path="res://Scenes/Boss Challenges/augmentation_challenge.gd" id="1_6b1dl"]
 [ext_resource type="Script" uid="uid://du20nhsbamdx8" path="res://Scenes/Boss Challenges/augmentation_slider.gd" id="2_hi8u6"]
+[ext_resource type="LabelSettings" uid="uid://c6868iptqdyu0" path="res://Scenes/Boss Challenges/augmentation_label_settings.tres" id="3_hi8u6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_6b1dl"]
+font_size = 26
 
 [node name="AugmentationChallenge" type="Control" node_paths=PackedStringArray("sliders")]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
+offset_left = 334.0
+offset_top = 95.0
+offset_right = 334.0
+offset_bottom = 95.0
 script = ExtResource("1_6b1dl")
-sliders = [NodePath("VBoxContainer/HBoxContainer"), NodePath("VBoxContainer/HBoxContainer2"), NodePath("VBoxContainer/HBoxContainer3"), NodePath("VBoxContainer/HBoxContainer4"), NodePath("VBoxContainer/HBoxContainer5"), NodePath("VBoxContainer/HBoxContainer6"), NodePath("VBoxContainer/HBoxContainer7")]
+sliders = [NodePath("VBoxContainer/HBoxContainer"), NodePath("VBoxContainer/HBoxContainer3"), NodePath("VBoxContainer/HBoxContainer4"), NodePath("VBoxContainer/HBoxContainer5")]
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -112.0
+offset_top = -241.0
+offset_right = 98.0
+offset_bottom = 61.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "AUGMENTATION"
+label_settings = SubResource("LabelSettings_6b1dl")
+horizontal_alignment = 1
 
 [node name="HBoxContainer" type="VBoxContainer" parent="VBoxContainer" node_paths=PackedStringArray("slider")]
 layout_mode = 2
@@ -33,23 +47,9 @@ slider = NodePath("HSlider")
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
 text = "Le cousin du patron"
+label_settings = ExtResource("3_hi8u6")
 
 [node name="HSlider" type="HSlider" parent="VBoxContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-value = 50.0
-
-[node name="HBoxContainer2" type="VBoxContainer" parent="VBoxContainer" node_paths=PackedStringArray("slider")]
-layout_mode = 2
-alignment = 1
-script = ExtResource("2_hi8u6")
-slider = NodePath("HSlider")
-
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-text = "Le plus ancien employé"
-
-[node name="HSlider" type="HSlider" parent="VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
 value = 50.0
@@ -63,6 +63,7 @@ slider = NodePath("HSlider")
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer3"]
 layout_mode = 2
 text = "La stagiaire"
+label_settings = ExtResource("3_hi8u6")
 
 [node name="HSlider" type="HSlider" parent="VBoxContainer/HBoxContainer3"]
 layout_mode = 2
@@ -80,6 +81,7 @@ slider = NodePath("HSlider")
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer4"]
 layout_mode = 2
 text = "Le pote du patron"
+label_settings = ExtResource("3_hi8u6")
 
 [node name="HSlider" type="HSlider" parent="VBoxContainer/HBoxContainer4"]
 layout_mode = 2
@@ -95,40 +97,9 @@ slider = NodePath("HSlider")
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer5"]
 layout_mode = 2
 text = "Le syndicaliste"
+label_settings = ExtResource("3_hi8u6")
 
 [node name="HSlider" type="HSlider" parent="VBoxContainer/HBoxContainer5"]
-layout_mode = 2
-size_flags_horizontal = 3
-value = 50.0
-
-[node name="HBoxContainer6" type="VBoxContainer" parent="VBoxContainer" node_paths=PackedStringArray("slider")]
-layout_mode = 2
-alignment = 1
-script = ExtResource("2_hi8u6")
-slider = NodePath("HSlider")
-
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer6"]
-layout_mode = 2
-text = "L'hôtesse d'accueil"
-
-[node name="HSlider" type="HSlider" parent="VBoxContainer/HBoxContainer6"]
-layout_mode = 2
-size_flags_horizontal = 3
-value = 50.0
-
-[node name="HBoxContainer7" type="VBoxContainer" parent="VBoxContainer" node_paths=PackedStringArray("slider")]
-layout_mode = 2
-alignment = 1
-script = ExtResource("2_hi8u6")
-min_value = 100.0
-max_value = 100.0
-slider = NodePath("HSlider")
-
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer7"]
-layout_mode = 2
-text = "Le patron"
-
-[node name="HSlider" type="HSlider" parent="VBoxContainer/HBoxContainer7"]
 layout_mode = 2
 size_flags_horizontal = 3
 value = 50.0
