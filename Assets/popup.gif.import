@@ -1,0 +1,14 @@
+[remap]
+
+importer="import_gif_to_animated_texture"
+type="AnimatedTexture"
+uid="uid://dy8rpdr6j4stu"
+path="res://.godot/imported/popup.gif-793998536bc38b5fd5d973cd7bb93210.tres"
+
+[deps]
+
+source_file="res://Assets/popup.gif"
+dest_files=["res://.godot/imported/popup.gif-793998536bc38b5fd5d973cd7bb93210.tres"]
+
+[params]
+

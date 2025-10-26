@@ -1,16 +1,31 @@
-[gd_scene load_steps=2 format=3 uid="uid://t8hbmgqhvd2b"]
+[gd_scene load_steps=6 format=3 uid="uid://t8hbmgqhvd2b"]
 
 [ext_resource type="Script" uid="uid://b5kxqgtsgltdc" path="res://Scripts/pop_up.gd" id="1_tv3en"]
+[ext_resource type="AudioStream" uid="uid://6118f0a4iqux" path="res://Assets/Pop Up/Pop Up Close-01.wav" id="2_0ek4e"]
+[ext_resource type="AudioStream" uid="uid://2hpd04x7xm8q" path="res://Assets/Pop Up/Pop Up Close-02.wav" id="3_05qr1"]
+[ext_resource type="AudioStream" uid="uid://bxsyt7nkltkc1" path="res://Assets/Pop Up/Pop Up Close.wav" id="4_rl54y"]
 
-[node name="PopUp" type="Panel"]
-offset_right = 123.0
-offset_bottom = 140.0
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_5xndk"]
+random_pitch = 1.89
+streams_count = 3
+stream_0/stream = ExtResource("2_0ek4e")
+stream_1/stream = ExtResource("3_05qr1")
+stream_2/stream = ExtResource("4_rl54y")
+
+[node name="PopUp2" type="Panel" node_paths=PackedStringArray("sfx")]
+offset_right = 50.0
+offset_bottom = 60.0
 script = ExtResource("1_tv3en")
+sfx = NodePath("AudioStreamPlayer")
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+offset_right = 15.0
+offset_bottom = 22.0
+theme_override_font_sizes/font_size = 10
 text = "X"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_5xndk")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
