@@ -104,6 +104,8 @@ var sequence_index = 0
 
 var sequence
 
+@export var type : AudioStreamPlayer
+
 func _ready() -> void:
 	numberOfSequence = 0
 	changeSequence()
@@ -123,6 +125,7 @@ func _input(event):
 	if event is InputEventKey and event.pressed:
 		if event.as_text_keycode() == sequence[sequence_index]:
 			txt.text += event.as_text()
+			type.play()
 			sequence_index += 1
 			if sequence_index == sequence.size():
 				numberOfSequence+=1

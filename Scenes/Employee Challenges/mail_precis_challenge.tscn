@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://otkh7yeeoys7"]
+[gd_scene load_steps=7 format=3 uid="uid://otkh7yeeoys7"]
 
 [ext_resource type="Script" uid="uid://ixf1s0b0ya6k" path="res://Scenes/Employee Challenges/mail_precis_challenge.gd" id="1_uhqgg"]
 [ext_resource type="FontFile" uid="uid://c4oet4vxfxga0" path="res://Assets/GrapeSoda.ttf" id="2_r3jeu"]
+[ext_resource type="AudioStream" uid="uid://cptiwiupnmucg" path="res://Assets/Keyboard/Keyboard_01.wav" id="3_oiehh"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_uhqgg"]
 font = ExtResource("2_r3jeu")
@@ -12,7 +13,12 @@ font_color = Color(1, 0.45999998, 0.45999998, 1)
 font = ExtResource("2_r3jeu")
 font_size = 30
 
-[node name="MailPrecis" type="Control" node_paths=PackedStringArray("txt", "txt_info")]
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_oiehh"]
+random_pitch = 1.11
+streams_count = 1
+stream_0/stream = ExtResource("3_oiehh")
+
+[node name="MailPrecis" type="Control" node_paths=PackedStringArray("type", "txt", "txt_info")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -20,6 +26,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_uhqgg")
+type = NodePath("AudioStreamPlayer")
 txt = NodePath("Label")
 txt_info = NodePath("Label2")
 maxNumberofSequence = 3
@@ -57,3 +64,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_oiehh")

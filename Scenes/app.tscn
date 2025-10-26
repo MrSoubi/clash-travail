@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://cbjr6rdo4qbnx"]
+[gd_scene load_steps=35 format=3 uid="uid://cbjr6rdo4qbnx"]
 
 [ext_resource type="Script" uid="uid://oh6qgsqvkc2b" path="res://Scripts/stress-manager.gd" id="1_u0ug8"]
 [ext_resource type="Script" uid="uid://cbg2hhm6hi5p2" path="res://Scenes/app.gd" id="1_w1m6e"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://1k2flfv01hke" path="res://Scripts/game.gd" id="4_atls0"]
 [ext_resource type="Texture2D" uid="uid://bjw8r8ta1ntgv" path="res://Assets/image(1).gif" id="4_patxt"]
 [ext_resource type="PackedScene" uid="uid://cvcuv61easb08" path="res://Scenes/Employee Challenges/demande_augmentation_challenge.tscn" id="5_fdjpt"]
+[ext_resource type="AudioStream" uid="uid://04oog4wsrsak" path="res://Assets/Binouze/UI_Click.wav" id="5_tb7mq"]
 [ext_resource type="PackedScene" uid="uid://ch5urvmoaebc" path="res://Scenes/Boss Challenges/bourse_challenge.tscn" id="6_8djel"]
 [ext_resource type="PackedScene" uid="uid://bsah8d2sb0pwh" path="res://Scenes/Boss Challenges/challenge_pop_ups.tscn" id="6_patxt"]
 [ext_resource type="PackedScene" uid="uid://bmkbhng5blwhx" path="res://Scenes/Employee Challenges/destress_employee.tscn" id="7_76bsv"]
@@ -72,7 +73,7 @@ MainMenu = NodePath("MainMenu")
 BossWin = NodePath("BossWin")
 EmployeeWin = NodePath("EmployeeWin")
 
-[node name="MainMenu" type="Control" parent="." node_paths=PackedStringArray("game")]
+[node name="MainMenu" type="Control" parent="." node_paths=PackedStringArray("game", "start")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -81,6 +82,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("2_fdjpt")
 game = NodePath("../Game")
+start = NodePath("PlaySound")
 
 [node name="Panel" type="Panel" parent="MainMenu"]
 layout_mode = 1
@@ -108,6 +110,9 @@ offset_right = 864.0
 offset_bottom = 749.0
 scale = Vector2(0.5349004, 0.5349004)
 texture_normal = ExtResource("4_patxt")
+
+[node name="PlaySound" type="AudioStreamPlayer" parent="MainMenu"]
+stream = ExtResource("5_tb7mq")
 
 [node name="Game" type="Control" parent="." node_paths=PackedStringArray("employee_zone", "boss_zone")]
 layout_mode = 3
