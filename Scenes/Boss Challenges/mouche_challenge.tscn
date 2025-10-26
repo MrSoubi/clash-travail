@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://b0oc6hcr4js4c"]
 
 [ext_resource type="PackedScene" uid="uid://bu5dh1b1o6i1o" path="res://Scenes/fly.tscn" id="1_61r2u"]
-[ext_resource type="Script" path="res://Scenes/Boss Challenges/mouche_challenge.gd" id="1_yvo7r"]
+[ext_resource type="Script" uid="uid://bkl5rs7noh1jx" path="res://Scenes/Boss Challenges/mouche_challenge.gd" id="1_yvo7r"]
 
 [sub_resource type="Curve2D" id="Curve2D_ahjye"]
 _data = {
@@ -32,6 +32,8 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 587.0
+offset_right = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
