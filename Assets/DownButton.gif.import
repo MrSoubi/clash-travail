@@ -1,0 +1,14 @@
+[remap]
+
+importer="import_gif_to_animated_texture"
+type="AnimatedTexture"
+uid="uid://dhvyxt8acrsp8"
+path="res://.godot/imported/DownButton.gif-4accd46b5f56be035b5363c529033b56.tres"
+
+[deps]
+
+source_file="res://Assets/DownButton.gif"
+dest_files=["res://.godot/imported/DownButton.gif-4accd46b5f56be035b5363c529033b56.tres"]
+
+[params]
+

@@ -1,0 +1,14 @@
+[remap]
+
+importer="import_gif_to_animated_texture"
+type="AnimatedTexture"
+uid="uid://bchbcoi7vxl3m"
+path="res://.godot/imported/UpButton.gif-b7e7e4d6d6c0b1aa93381c0c030aa24d.tres"
+
+[deps]
+
+source_file="res://Assets/UpButton.gif"
+dest_files=["res://.godot/imported/UpButton.gif-b7e7e4d6d6c0b1aa93381c0c030aa24d.tres"]
+
+[params]
+

@@ -1,7 +1,7 @@
 extends Control
 
-@export var upSprite : Sprite2D
-@export var downSprite : Sprite2D
+@export var upSprite : TextureRect
+@export var downSprite : TextureRect
 var baseSize : Vector2 = Vector2(1, 1)
 var bigSize : Vector2 = Vector2(1.2, 1.2)
 
